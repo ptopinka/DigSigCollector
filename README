@@ -1,1 +1,16 @@
 Pavel Topinka Project ptopinka@gmail.com
+
+System for collection of Digital Signatures 
+
+It is possible to sign given document with RSA based 
+digital signature. For storing Digital Signatures
+is used XML Signature specification with extension 
+Digital Timestamps
+
+If you are interested about this project or technology
+please contact me on my email.
+
+There is not commited jars and other libraries needed
+to compile and deploy project
+
+Pavel Topinka
