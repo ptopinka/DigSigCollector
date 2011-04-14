@@ -1,0 +1,64 @@
+8
+
+dir
+88
+http://b140/xmlsignatures/trunk/bin
+http://b140/xmlsignatures
+
+
+
+2007-08-22T08:18:14.167131Z
+88
+topon
+
+
+svn:special svn:externals svn:needs-lock
+
+make.bat
+file
+
+
+
+
+2007-08-22T05:25:53.437500Z
+e113d46e9409a205ba0b25587b7f16e3
+2007-08-22T08:18:14.167131Z
+88
+topon
+
+setenv.bat
+file
+
+
+
+
+2007-08-22T05:11:31.203125Z
+c3c66a8fc128e7010187f1df6e74cc71
+2007-08-22T08:18:14.167131Z
+88
+topon
+
+run.bat
+file
+
+
+
+
+2007-08-22T07:33:50.484375Z
+c7d8e8a839b66372d00711df162352f2
+2007-08-22T08:18:14.167131Z
+88
+topon
+
+install.bat
+file
+
+
+
+
+2007-08-22T05:29:36.062500Z
+defb54b81fad6cd3f99a53fe8b19dfe8
+2007-08-22T08:18:14.167131Z
+88
+topon
+

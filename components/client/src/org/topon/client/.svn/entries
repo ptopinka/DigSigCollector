@@ -1,0 +1,67 @@
+8
+
+dir
+24
+http://b140/xmlsignatures/trunk/components/client/src/org/topon/client
+http://b140/xmlsignatures
+
+
+
+2007-07-30T08:08:48.708063Z
+19
+topon
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+75ae8cb2-6f9c-4661-9207-b8c7a6b91d1a
+
+URLClientException.java
+file
+
+
+
+
+2007-07-20T08:24:25.515625Z
+3bf5e9d214d316e5246552135ecdccd6
+2007-07-25T11:16:40.944526Z
+2
+topon
+
+URLClient.java
+file
+
+
+
+
+2007-07-30T08:18:41.593750Z
+6d8122dbbf5f8933654ae1623475fee1
+2007-07-30T08:08:37.807312Z
+18
+topon
+
+gui
+dir
+
+Client.java
+file
+
+
+
+
+2007-07-27T13:36:19.000000Z
+154aae71d2c10ab1fe95321bb8f0edaa
+2007-07-27T06:46:50.972547Z
+13
+topon
+

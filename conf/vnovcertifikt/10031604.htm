@@ -1,0 +1,358 @@
+<!DOCTYPE HTML PUBLIC '-//W3C//DTD HTML 3.2 Final//EN'>
+<HTML>
+
+<HEAD>
+<META http-equiv="Content-Language" content="cs">
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-2">
+
+<META name="version" content="07.05.00">
+<META name="date" content="26.4.2010">
+
+<TITLE>Instalace certifikátu 10031604</TITLE>
+
+<style type="text/css"> 
+	<!--
+	BODY      { font-size: 12px; font-family: "Geneva CE", Tahoma, "Helvetica CE", Helvetica }
+	HR        { color: #becbeb}
+	TABLE     { font-size: 12px; font-family: "Geneva CE", Tahoma, "Helvetica CE", Helvetica }
+	TD.nadpis { font-size: 14px; font-weight: bold; color: #00008b }
+	TD.pata   { font-size: 11px; }
+	A         { text-decoration: none; font-weight: bold; color: #29298c }
+	A:hover   { text-decoration: underline }
+	A:active  { color: #f0a000 }
+	-->
+</style>
+
+<OBJECT
+	id="ICAPKI"
+	classid="clsid:4C3CEE0B-4F2F-44C3-9586-4368F3200143"
+	codebase="http://tests.ica.cz/icapki.cab#version=8,8,6,0"
+	standby="Čekejte prosím, probíhá stahování ActiveX komponenty ICApki...">
+</OBJECT>
+
+<!-- FUNKCE -->
+<script type="text/javascript">
+
+var g_objICAPKI;
+var g_bMSIE;
+var g_Cert= "MIIEtjCCA56gAwIBAgIEAJkR9DANBgkqhkiG9w0BAQsFADCBvjELMAkGA1UEBhMC"
+ + "Q1oxQTA/BgNVBAMMOEkuQ0Eg4oCTIFRlc3QgUXVhbGlmaWVkIENlcnRpZmljYXRp"
+ + "b24gQXV0aG9yaXR5LCAwMS8yMDEwMS0wKwYDVQQKDCRQcnZuw60gY2VydGlmaWth"
+ + "xI1uw60gYXV0b3JpdGEsIGEucy4xPTA7BgNVBAsMNEkuQ0EgLSBBY2NyZWRpdGVk"
+ + "IFByb3ZpZGVyIG9mIENlcnRpZmljYXRpb24gU2VydmljZXMwHhcNMTAxMTEwMTQx"
+ + "MDQyWhcNMTAxMjEwMTQxMDQyWjB5MQswCQYDVQQGEwJDWjEWMBQGA1UEAwwNUGF2"
+ + "ZWwgVG9waW5rYTEWMBQGA1UECgwNUGF2ZWwgVG9waW5rYTEhMB8GCSqGSIb3DQEJ"
+ + "ARYScHRvcGlua2FAZ21haWwuY29tMRcwFQYDVQQFEw5JQ0EgLSAxMDAwNjU2MTCC"
+ + "ASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMWaz/au2TAidSkbS8tPQnxj"
+ + "Oc9PpvIyf27zUJGhq/w8nvxoWsDwxaCVQv2vf5LJa20No9CGYo4aww50jhOmlphu"
+ + "XH0ZzNVg9E2ZtaLS9tqAWhFGiA/2PWHNLL0zO4W451FTHB/I36iYYLbLmUPOUNnf"
+ + "Wjfvj19YhtL+RKVP8SFUjl9yeizGNU2AHIbDO7ZmgjHwJO4MJKPhl5YXAX2BJtv7"
+ + "NCeJ7O+hH4XmhhQqijftotLtoxlR4KC6TplP+Wit6EF9L/V9OVeldeC6i6NZbR7v"
+ + "t2+t26mgz4l+fFqrmC2rjgUooKi2Gi/STYhsFxjry14zP4DAEkwSSni4QI341/8C"
+ + "AwEAAaOB/zCB/DAOBgNVHQ8BAf8EBAMCBsAwHwYDVR0jBBgwFoAU8lgQ2NL5+VQG"
+ + "iMC0B0+hTn/qZXcwHQYDVR0OBBYEFM1gHWJfWoSGqZTeOSyLCl/wWxt0MF4GA1Ud"
+ + "IARXMFUwUwYMKwYBBAGBuEgBaAoCMEMwQQYIKwYBBQUHAgIwNRozVGVudG8gY2Vy"
+ + "dGlmaWthdCAoUUMpIGplIHZ5ZGFuIHBybyB0ZXN0b3ZhY2kgdWNlbHkuMBgGCCsG"
+ + "AQUFBwEDBAwwCjAIBgYEAI5GAQEwMAYDVR0fBCkwJzAloCOgIYYfaHR0cDovL3Rl"
+ + "c3RxLmljYS5jei90cWljYTEwLmNybDANBgkqhkiG9w0BAQsFAAOCAQEAXrTfG+wD"
+ + "+5RpzKMcnKzluWp1iZvc9YSY2zN26ES8QOsw8PH5QYscSwasYRqF87QmTzc+Hjyp"
+ + "PLr0R/0NyhxCfS/0ZuGRhrFSX9DaVetpBSqqDbbMgeJFlHsdqj8RJg2dciBgi2Fa"
+ + "Z0YrHlnxCMl30o6/gp7Eh5LIqjH17haXiZNgdN3CuL6vzRdchXprghH8c4fifx8y"
+ + "5WzSgaP4vtp0iPmLK62HYruKqYqN+ElDvf1cxYS7Bo9N9MigSO6PTGfwa+fxf35k"
+ + "v+QXtEVcc27g/dKQSSH0DaKu4mFsOt1jzUvFzHIZ4Y4iT1WNMkANUljCU536pMuN"
+ + "S+3HOjG5vz3Yuw=="
+var g_CACert= "MIIEwDCCA6igAwIBAgIEAJkLsDANBgkqhkiG9w0BAQsFADCBvjELMAkGA1UEBhMC"
+ + "Q1oxQTA/BgNVBAMMOEkuQ0Eg4oCTIFRlc3QgUXVhbGlmaWVkIENlcnRpZmljYXRp"
+ + "b24gQXV0aG9yaXR5LCAwMS8yMDEwMS0wKwYDVQQKDCRQcnZuw60gY2VydGlmaWth"
+ + "xI1uw60gYXV0b3JpdGEsIGEucy4xPTA7BgNVBAsMNEkuQ0EgLSBBY2NyZWRpdGVk"
+ + "IFByb3ZpZGVyIG9mIENlcnRpZmljYXRpb24gU2VydmljZXMwHhcNMTAwMTAxMDAw"
+ + "MDAwWhcNMjAwMTAxMDAwMDAwWjCBvjELMAkGA1UEBhMCQ1oxQTA/BgNVBAMMOEku"
+ + "Q0Eg4oCTIFRlc3QgUXVhbGlmaWVkIENlcnRpZmljYXRpb24gQXV0aG9yaXR5LCAw"
+ + "MS8yMDEwMS0wKwYDVQQKDCRQcnZuw60gY2VydGlmaWthxI1uw60gYXV0b3JpdGEs"
+ + "IGEucy4xPTA7BgNVBAsMNEkuQ0EgLSBBY2NyZWRpdGVkIFByb3ZpZGVyIG9mIENl"
+ + "cnRpZmljYXRpb24gU2VydmljZXMwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEK"
+ + "AoIBAQDK5112yW4mQWnwplKeW9yOB8vYx0kzl76393n7t+DDhQeoy7qUC/x3cZ2r"
+ + "XPpXSN2jam2iYyvKi3N0DZarnsnI/r1uKEuK60l5i3zekcEY8obtX9MybEbDG68J"
+ + "EZGBpKGPzN3sMpfYhBB8JrSGqKly+8XzSLrNDNo+BCo3P2MYLWJ/f61vay37KNol"
+ + "hMyMgDGwExx6i8bgoBddov3yqnNFw9RPwn6SvrdIv3X4w7FfSALgVOaq45Cai7PV"
+ + "dthnzFsLzoS0N1+TULB4CBO9MERQpHew+L1hR1AmC9pqkPdOFVeW2y6QdhK0Yq7i"
+ + "CT98lbeBFynYqmnfQbejeOifi+XPAgMBAAGjgcMwgcAwDwYDVR0TAQH/BAUwAwEB"
+ + "/zAOBgNVHQ8BAf8EBAMCAQYwfgYDVR0gBHcwdTBzBgRVHSAAMGswaQYIKwYBBQUH"
+ + "AgIwXRpbVGVudG8gY2VydGlmaWthdCBqZSB2eWRhbiBqYWtvIHRlc3RvdmFjaSBr"
+ + "b3Jlbm92eSBjZXJ0aWZpa2F0L1RoaXMgaXMgdGVzdCByb290IGNlcnRpZmljYXRl"
+ + "LjAdBgNVHQ4EFgQU8lgQ2NL5+VQGiMC0B0+hTn/qZXcwDQYJKoZIhvcNAQELBQAD"
+ + "ggEBAGeenz7ulqXBaWHqPC7jjnl/Rev4B6SZqWFbb837bY4PvlxgjNMEoeysghO4"
+ + "VtYSbXLaC+j1TYu3r1yVDG4Cy3vtGy0YcAhb4oJDHB20oXpyViBM07mhC1pPOC1X"
+ + "RUjFaVAU5rCvA2FM+lLIzgO319FIJfS1Ipde/x5fozSFrQkOo3ZTk99RrUJh9ppr"
+ + "51WS5+diVjWDuVCC403B7jX0VlcBfCmrr8D/gM9sDiW8QYizaE1y8i4QQINIYr7T"
+ + "twLDOJw83pQw8pgyXyxQvFTwvBQcBwbhamkUr5g5MLwng5BoEtuBlo+JSnvwey5e"
+ + "q2VSLSxpgyWkdgBC8rgk4pWmvQ8="
+
+function BrowserName()
+{
+	document.write(navigator.appName);
+}
+
+function GetExceptionNumber(ex)
+{
+	var nNumber;
+	nNumber = ex ? (ex.number & 0x7FFFFFFF) + 0x80000000 : 0;
+	return "0x" + nNumber.toString(16).toUpperCase();
+}
+
+function GetExceptionDescription(ex)
+{
+	if ((ex == null) || (typeof(ex) == "undefined")) return null;
+	if ((ex.description == null) || (typeof(ex.description) == "undefined") || !ex.description.length) return "popis neuveden";
+	return ex.description;
+}
+
+function InfoMsg(text)
+{
+	var objText = document.getElementById("tagInfo");
+	objText.innerHTML += text;
+}
+
+function OnLoad()
+{
+	var strErrMsg;
+	
+	// kontrola prohlizece MSIE nebo Netscape (kontrola verze je problematicka)
+	if (navigator.appName == "Microsoft Internet Explorer")
+	{
+	    g_bMSIE= true;
+	}
+	else
+	{
+		cmdRootCA.style.visibility= "visible";
+		secCard.style.visibility= "hidden";
+	}
+	if (!g_bMSIE && (navigator.appName != "Netscape"))
+	{
+		strErrMsg = "<FONT COLOR=red><STRONG>Váš internetový prohlížeč není podporován.</STRONG></FONT>";
+		strErrMsg += "<SPAN style='font-weight: normal; color: WindowText'><BR>";
+		strErrMsg += "Tato stránka je určena pro Microsoft Internet Explorer verze 5.0 a vyšší nebo Netscape verze 2.0 beta3 a vyšší.<BR>";
+		strErrMsg += "<BR><STRONG>Název Vašeho prohlížeče: </STRONG>"
+		strErrMsg += navigator.appName;
+		strErrMsg += "<BR><STRONG>Verze Vašeho prohlížeče: </STRONG>";
+		strErrMsg += navigator.appVersion;
+		strErrMsg += "</SPAN>";
+		InfoMsg(strErrMsg);
+		return;
+	}
+    if (g_bMSIE)
+    {
+		// v MSIE inicializujeme komponentu ICApki
+	    try
+	    {
+		    g_objICAPKI = new ActiveXObject("ICA.ICApki");
+	    }
+	    catch(ex)
+	    {
+		    strErrMsg = "<FONT COLOR=red><STRONG>Instalaci certifikátu nelze provést.</STRONG><BR>V systému Windows není nainstalována komponenta ICApki nebo máte zakázané spouštění ActiveX komponent.</FONT><BR><BR>";
+            strErrMsg += "<SPAN style='font-weight: normal; color: WindowText'>";
+            strErrMsg += "Popis instalace komponenty naleznete na <A HREF=\"http://www.ica.cz\">webových stránkách CA</A> ";
+            strErrMsg += "v sekci <A HREF=\"http://www.ica.cz/cz/menu/7/casto-kladene-otazky/clanek-81-neni-nainstalovana-podpora-pro-podepisovani-icaenroll-icarenewal-icapki-/\">Často kladené otázky</A>.";
+            strErrMsg += "</SPAN>";
+            InfoMsg(strErrMsg);
+		    cmdInstall.disabled = true;
+	    }
+    }
+}
+
+function Install()
+{
+	if(g_bMSIE) InstallCertMSIE();
+	else        InstallCertSPKAC();
+}
+
+function InstallCertMSIE()
+{
+	var nErrNumber= "";
+	var strCertSN= "";
+
+	// instalace root certu
+    try
+    {
+        g_objICAPKI.Reset();
+		InfoMsg("Instalace kořenového certifikátu do Windows ...<BR>");
+		g_objICAPKI.EnrollX509("", g_CACert, 8);
+		strCertSN = g_objICAPKI.GetCertVal(g_CACert, 1);
+		InfoMsg("<FONT COLOR=green><STRONG>OK</STRONG> - certifikát certifikační autority číslo " + strCertSN + " byl instalován</FONT>");
+    }
+    catch(ex)
+    {
+        nErrNumber = GetExceptionNumber(ex);
+	    switch(nErrNumber)
+	    {
+            case "0x800704C7": // storno dialogu instalace root certifikátu
+		        InfoMsg("<FONT COLOR=red><STRONG>X</STRONG> - uživatel zrušil instalaci certifikátu certifikační autority</FONT>");
+                break;
+            default:
+                InfoMsg("<FONT COLOR=red><STRONG>Chyba číslo " + GetExceptionNumber(ex) + "</STRONG> - \"" + GetExceptionDescription(ex) + "\"</FONT>"); 
+                break;
+        }
+    }
+	InfoMsg("<BR><BR>");
+
+	// instalace klientského certu
+    try
+    {
+	    InfoMsg("Instalace klientského certifikátu do Windows ...<BR>");
+	    g_objICAPKI.EnrollX509(g_Cert, "", 2);
+	    strCertSN = g_objICAPKI.GetCertVal(g_Cert, 1);
+	    InfoMsg("<FONT COLOR=green><STRONG>OK</STRONG> - klientský certifikát číslo " + strCertSN + " byl instalován</FONT>");
+    }
+    catch(ex)
+    {
+        nErrNumber = GetExceptionNumber(ex);
+	    switch(nErrNumber)
+	    {
+            case "0x80090020": // chyba klíče
+                InfoMsg("<FONT COLOR=red>CHYBA: Certifikát instalujete na počítači, kde nebyla generována žádost nebo pod jiným přihlášením do Windows.</FONT>"); break;
+            default:
+                InfoMsg("<FONT COLOR=red><STRONG>Chyba číslo " + GetExceptionNumber(ex) + "</STRONG> - \"" + GetExceptionDescription(ex) + "\"</FONT>"); 
+                break;
+        }
+    }
+    InfoMsg("<BR><BR>");
+
+	// instalace certu na kartu
+	if(chkCard.checked)
+	{
+    try
+    {
+	    InfoMsg("Instalace klientského certifikátu na kartu ...<BR>");
+	    g_objICAPKI.EnrollX509(g_Cert, "", 1);
+	    strCertSN = g_objICAPKI.GetCertVal(g_Cert, 1);
+	    InfoMsg("<FONT COLOR=green><STRONG>OK</STRONG> - klientský certifikát číslo " + strCertSN + " byl instalován na kartu</FONT>");
+    }
+    catch(ex)
+    {
+        nErrNumber = GetExceptionNumber(ex);
+	    switch(nErrNumber)
+	    {
+            default:
+                InfoMsg("<FONT COLOR=red><STRONG>Chyba číslo " + GetExceptionNumber(ex) + "</STRONG> - \"" + GetExceptionDescription(ex) + "\"</FONT>"); 
+        }
+    }
+    InfoMsg("<BR><BR>");
+	}
+
+    // OK
+    cmdInstall.disabled= true;
+}
+
+</SCRIPT>
+
+<!-- NETSCAPE -->
+<SCRIPT type="text/javascript" language="javascript">
+
+function InstallRootSPKAC()
+{
+    // root cert
+    try
+    {
+        InfoMsg("Instalace kořenového certifikátu ...<BR>");
+        document.frmNetscape.elements.item(1).value= g_CACert;
+        document.frmNetscape.elements.item(0).value= "application/x-x509-ca-cert";
+        document.frmNetscape.submit();
+        InfoMsg("<FONT COLOR=green><STRONG>OK</STRONG> - certifikát certifikační autority byl instalován</FONT>");
+    }
+    catch(ex)
+    {
+        InfoMsg("<FONT COLOR=red><STRONG>Chyba číslo " + GetExceptionNumber(ex) + "</STRONG> - \"" + GetExceptionDescription(ex) + "\"</FONT>"); 
+        return;
+    }
+    InfoMsg("<BR><BR>");
+}
+
+function InstallCertSPKAC()
+{
+    // klientský cert
+    try
+    {
+        InfoMsg("Instalace klientského certifikátu ...<BR>");
+        document.frmNetscape.elements.item(1).value= g_Cert;
+        document.frmNetscape.elements.item(0).value= "application/x-x509-user-cert";
+        document.frmNetscape.submit();
+        InfoMsg("<FONT COLOR=green><STRONG>OK</STRONG> - klientský certifikát byl instalován</FONT>");
+    }
+    catch(ex)
+    {
+        InfoMsg("<FONT COLOR=red><STRONG>Chyba číslo " + GetExceptionNumber(ex) + "</STRONG> - \"" + GetExceptionDescription(ex) + "\"</FONT>"); 
+        return;
+    }
+    InfoMsg("<BR><BR>");
+}
+
+</SCRIPT>
+
+</HEAD>
+
+<BODY onload="OnLoad()">
+
+<!-- NETSCAPE -->
+<FORM ACTION="http://tests.ica.cz/cgi-bin/returncert.cgi" METHOD=post ENCTYPE="text/plain" ID=frmNetscape NAME=frmNetscape>
+ <INPUT TYPE=hidden NAME="Content-Type" VALUE="text/plain">
+ <INPUT TYPE=hidden NAME="Data" VALUE="Certifikat ve formatu PEM">
+</FORM>
+
+<!-- OBECNĚ -->
+<div align="center"><center>
+
+<NOSCRIPT>
+    <P style="COLOR: red">Váš internetový prohlížeč nepodporuje JavaScript nebo není skriptování povoleno, případně máte zakázané spouštění ActiveX komponent.</P>
+    <P><SPAN style="FONT-WEIGHT: normal; COLOR: windowtext"><BR><BR>Tato stránka je určena pro Microsoft Internet Explorer verze 5.0 a vyšší, Netscape verze 2.0 beta3 a vyšší.<BR>
+    Pokud není JavaScript povolen, zapněte aktivní skriptování ve vašem internetovém prohlížeči.
+    </SPAN></P>
+</NOSCRIPT>
+
+<TABLE border="0" width="90%" cellspacing="0" cellpadding="0" height="100%" style="BORDER-COLLAPSE: collapse" bordercolor="#111111">
+  <tr>
+    <td width="100%" height="100%" valign="top">
+    
+        <table border="0" cellspacing="0" cellpadding="0" style="BORDER-COLLAPSE: collapse" bordercolor="#111111" width="100%">
+  		<tr height="1"><td><!-- CARA -->&nbsp;<hr size="1"></td></tr>
+  		<tr><td class="nadpis"><p align="center">Instalace osobního certifikátu 10031604 pro <script language="javascript">BrowserName();</script></p></td>
+  		<tr height="1"><td><!-- CARA --><hr size="1"></td></tr>
+  		</table>
+  		
+		<div align="center"><center>
+			<table cellspacing="0" cellpadding="10" style="BORDER-COLLAPSE: collapse" bordercolor="#111111" border="0">
+			<tr><td valign="top"><b>Vystavitel:</b><p>
+***
+			</p></td><td valign="top"><p><b>Předmět:</b></p><p>
+C = CZ<br>CN = Pavel Topinka<br>O = Pavel Topinka<br>emailAddress = ptopinka@gmail.com<br>serialNumber = ICA - 10006561<br>
+			</p></td></tr>
+			</table>
+        </center></div>
+        
+        <p align="center">&nbsp;</p>
+        <p align="center"><input onclick="Install()" type="button" value="Instalace certifikátu" id="cmdInstall"></p>
+        <div id="secCard"><p align="center"><input type="checkbox" id="chkCard" value="off">instalovat certifikát na kartu</p></div>
+        <p align="center"><input onclick="InstallRootSPKAC()" type="button" value="Instalace certifikátu I.CA" id="cmdRootCA" style="visibility:hidden"></p>
+        <p align="center">&nbsp;</p>
+        
+		<p>Po instalaci certifikátu do internetového prohlížeče doporučujeme exportovat
+		váš instalovaný certifikát a bezpečně jej uložit (např. na flash disk, CD apod.)
+		pro případ ztráty privátního klíče (např. při nové instalaci počítače).
+        <a href="http://www.ica.cz/cz/menu/33/prace-s-certifikaty/zaloha-certifikatu/">Popis zálohy certifikátu</a>
+        naleznete na webových stránkách <a href="http://www.ica.cz">Certifikační autority I.CA</a>.</p>
+
+		<p><a href="http://www.ica.cz/certifikacni_politika.html">Certifikační politika I.CA</a></p>
+
+		<P id="tagInfo"></P>		
+		
+    </td>
+  </tr>
+  
+  <tr height="1"><td><!-- CARA --><hr size="1"></td></tr>
+  <!-- PATICKA-BEGIN -->
+  <tr><td class="pata"><br><p align="center">&copy; I.CA 2000-2010 All Right Reserved.</p><br></td></tr>
+  <!-- PATICKA-END -->
+  
+</TABLE>
+</center></div>
+</BODY>
+</HTML>

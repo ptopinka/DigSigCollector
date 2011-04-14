@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/xmlsignatures/!svn/ver/51/trunk/components/database/src/org/topon/ldap
+END
+Ldap.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/xmlsignatures/!svn/ver/51/trunk/components/database/src/org/topon/ldap/Ldap.java
+END
+LdapStoreException.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/xmlsignatures/!svn/ver/51/trunk/components/database/src/org/topon/ldap/LdapStoreException.java
+END
+LdapStore.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/xmlsignatures/!svn/ver/72/trunk/components/database/src/org/topon/ldap/LdapStore.java
+END

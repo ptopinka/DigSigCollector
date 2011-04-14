@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/xmlsignatures/!svn/ver/21/trunk/components/configuration/src/org/topon/configuration/identity
+END
+IdentityFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/xmlsignatures/!svn/ver/5/trunk/components/configuration/src/org/topon/configuration/identity/IdentityFactory.java
+END
+IdentityJKS.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/xmlsignatures/!svn/ver/21/trunk/components/configuration/src/org/topon/configuration/identity/IdentityJKS.java
+END
+IdentityException.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/xmlsignatures/!svn/ver/2/trunk/components/configuration/src/org/topon/configuration/identity/IdentityException.java
+END
+IdentityInterface.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/xmlsignatures/!svn/ver/8/trunk/components/configuration/src/org/topon/configuration/identity/IdentityInterface.java
+END
+IdentityP12.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/xmlsignatures/!svn/ver/21/trunk/components/configuration/src/org/topon/configuration/identity/IdentityP12.java
+END

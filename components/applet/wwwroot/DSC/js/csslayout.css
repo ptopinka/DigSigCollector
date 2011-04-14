@@ -1,0 +1,194 @@
+
+/*Credits: Dynamic Drive CSS Library */
+/*URL: http://www.dynamicdrive.com/style/ */
+h1 {font-family:  segoe script, MV Boli, Helvetica, Geneva, Arial, SunSans-Regular, sans-serif;
+margin-left: 130px;
+color:white; }
+/*position: justify;*/
+h2 {font-family:  segoe script, MV Boli, Helvetica, Geneva, Arial, SunSans-Regular, sans-serif;
+margin-left: 130px;
+color: black;}
+h3 {font-family: segoe script, MV Boli, Helvetica, Arial;
+color: #8c3a3a;
+margin-left: 70px; }
+
+
+/*Credits: Dynamic Drive CSS Library */
+/*URL: http://www.dynamicdrive.com/style/ */
+
+.underlinemenu{
+font-weight: bold;
+width: 100%;
+}
+
+.underlinemenu ul{
+padding: 6px 0 7px 0; /*6px should equal top padding of "ul li a" below, 7px should equal bottom padding + bottom border of "ul li a" below*/
+margin: 0;
+text-align: center; //set value to "left", "center", or "right"*/
+}
+
+.underlinemenu ul li{
+display: inline;
+}
+
+.underlinemenu ul li a{
+color: white;
+padding: 6px 3px 4px 3px; /*top padding is 6px, bottom padding is 4px*/
+margin-right: 25px; /*spacing between each menu link*/
+text-decoration: none;
+border-bottom: 3px solid gray; /*bottom border is 3px*/
+}
+
+.underlinemenu ul li a:hover, .underlinemenu ul li a.selected{
+border-bottom-color: white;
+color:gray ;
+}
+
+
+.underlinemenuright{
+font-weight: bold;
+width: 100%;
+}
+
+.underlinemenuright ul{
+padding: 6px 0 7px 0; /*6px should equal top padding of "ul li a" below, 7px should equal bottom padding + bottom border of "ul li a" below*/
+margin: 0;
+text-align: right; //set value to "left", "center", or "right"*/
+}
+
+.underlinemenuright ul li{
+display: inline;
+}
+
+.underlinemenuright ul li a{
+color: white;
+padding: 6px 3px 4px 3px; /*top padding is 6px, bottom padding is 4px*/
+margin-right: 25px; /*spacing between each menu link*/
+text-decoration: none;
+border-bottom: 0px solid gray; /*bottom border is 3px*/
+}
+
+.underlinemenuright ul li a:hover, .underlinemenu ul li a.selected{
+border-bottom-color: white;
+color:gray ;
+}
+
+
+
+/*
+ul#menu {
+	width: 100%;
+	height: 43px;
+	background: #8c3a3a url("images/menu-bg.gif") top left repeat-x;
+	font-size: 0.8em;
+	font-family: "Lucida Grande", Verdana, sans-serif;
+	font-weight: modern, segoe script;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+ul#menu li {
+	display: block;
+	float: left;
+	margin: 0 0 0 5px;
+}
+ul#menu li a {
+	height: 43px;
+	color: #777;
+	text-decoration: none;
+	display: block;
+	float: left;
+	line-height: 200%;
+	padding: 8px 15px 0;
+}
+ul#menu li a:hover {
+	color: #333
+    background: #8c3a3a;
+}
+ul#menu li a.current {
+	color: #FFF;
+	background: #FFF url("images/current-bg.gif") top left repeat-x;
+	padding: 5px 15px 0;
+}
+*/
+#body { background-color: #cfcfcf;}
+#all { background-color: #cfcfcf;}
+#wrapper {
+text-align: left;
+margin: 0px auto;
+padding: 0px;
+border:7px solid black;
+width: 1024px;
+background: #333;
+height: auto;
+}
+
+#header {
+margin: 0 0 8px 0;
+background: #444, #FF6347;
+padding-left: 0px;
+float:top;
+}
+#container {
+background: #FAEBD7;
+width: 1024px}
+#side-a {
+background: #333;
+float: left;
+width:0px
+border-right: 1px;
+}
+
+#side-b { 
+background: white;
+padding-right: 18px;
+padding-left: 10px;
+float: right;
+width: 938px;
+height: 1%; /* Holly hack for Peekaboo Bug */
+margin-left: 29px;
+margin-right: 29px;
+margin-bottom: 20px;
+}
+
+#footer {
+clear: both;
+background: #A2A2A2;
+position: bottom;
+text-align:center;
+margin-bottom: 9px;
+}
+
+/*
+#navbar {
+	background: #333;
+	float: left;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	width: 7em;
+    border-right: 1px solid black
+}
+#navbar li {
+	font: 62.5% "Lucida Sans Unicode", "Bitstream Vera Sans", "Trebuchet Unicode MS", "Lucida Grande", Verdana, Helvetica, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+#navbar a {
+	background: #333; 
+	border-bottom: none;
+	color: #FAEBD7; 
+	display: block;
+	margin: 0;
+	padding: 8px 12px;
+	text-decoration: none;
+}
+#navbar a:hover {
+	background: #2580a2 url("images/hover2.gif") left center no-repeat;
+	color: #fff;
+	padding-bottom: 8px;
+}*/
+  a:link {
+   text-decoration: underline;
+    color: #800000;}
+  a:visited { color: #616161; }

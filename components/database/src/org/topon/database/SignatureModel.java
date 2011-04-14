@@ -1,0 +1,254 @@
+package org.topon.database;
+
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.security.cert.X509Certificate;
+import java.sql.Connection;
+import java.util.StringTokenizer;
+
+import javax.xml.parsers.ParserConfigurationException;
+
+import org.apache.xml.security.Init;
+import org.apache.xml.security.exceptions.XMLSecurityException;
+import org.apache.xml.security.signature.XMLSignature;
+import org.apache.xml.security.signature.XMLSignatureException;
+import org.topon.signatures.apache.DetachedXMLSignatureApache;
+import org.topon.configuration.ServerConfiguration;
+import org.topon.signatures.XMLSignatureHelper;
+import org.topon.signatures.apache.DetachedXMLSignatureApache;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.NodeList;
+
+
+
+
+public class SignatureModel {
+
+
+	static{
+		if (!Init.isInitialized()){
+			Init.init();
+		}
+	}
+
+
+	/** whole xml representation*/
+	private Document signatureDoc;
+	/** signed document id (primary key t_documents) nutno ziskat z databaze)*/
+	private int  docid;   
+	/** CN - nabrano z cetifikatu toho kdo podepsal*/
+	private String CN; 
+	/** Login podepisujiciho, unikatni*/
+	private String login;
+	/** URL of signed document*/
+	private String documentURL;
+	/** certificate from xml signature, needed for validation */
+	private X509Certificate certificate;
+	
+	
+
+	private String signatureXMLString = null;
+
+	public SignatureModel(Document signature) {
+		this.signatureDoc = signature;
+		init();
+	}
+
+	public SignatureModel(Document signature, String signatureXMLString) {
+		this.signatureDoc = signature;
+		this.signatureXMLString = signatureXMLString;
+		init();
+	}
+
+
+	public byte[] getSignatureByteArray() {
+		ByteArrayOutputStream baos = XMLSignatureHelper.printDOMDocumentToOutputStream(signatureDoc);
+		/* change OutputStream to InputStream*/
+		byte[] output = baos.toByteArray(); 
+		return output;
+	}
+	
+	
+    public String getSignatureXMLString() {
+		if (signatureXMLString == null || signatureXMLString.equals("")) {
+			ByteArrayOutputStream baos = XMLSignatureHelper
+					.printDOMDocumentToOutputStream(signatureDoc);
+			this.signatureXMLString = baos.toString();
+			try {
+				baos.flush();
+				baos.close();
+			} catch (IOException ex) {
+				ex.printStackTrace();
+			}
+
+		}
+		return signatureXMLString;
+	}
+
+	public void setSignatureXMLString(String signatureXMLString) {
+		this.signatureXMLString = signatureXMLString;
+	}
+
+	// TODO important dodelat prevedeni XMLSignature DOM documentu bud na
+	// InputStream nebo
+	//na String spis na string
+	private SignatureModel() {
+
+	}
+
+
+	private void init() {
+		this.CN = retrieveCN();
+		this.login = retrieveLogin();
+		this.documentURL = retrieveDocumentURL();
+		this.docid = retrieveDocId();  
+		this.certificate = retrieveCertificate();
+	}
+/*
+	public String getSignatureString() {
+		return new String();
+	}
+*/
+
+	public String getCN() {
+		return CN;
+	}
+
+
+	public int getDocid() {
+		return docid;
+	}
+
+
+	public String getDocumentURL() {
+		return documentURL;
+	}
+
+
+	public String getLogin() {
+		return login;
+	}
+
+
+	public Document getSignatureDoc() {
+		return signatureDoc;
+	}
+
+
+	/**
+	 * Retrieve url of signed document from XML Signature DOM representation
+	 * @return String url of signed document
+	 */
+	private String retrieveDocumentURL() {
+		String documentURL = null;
+		NodeList refereneEl = signatureDoc.getElementsByTagName("Reference");
+		int pocet = refereneEl.getLength();
+		for (int i = 0; i < pocet; i++ ) {
+			documentURL =((Element)refereneEl.item(i)).getAttribute("URI");
+			if(documentURL != null) {
+				break;
+			}
+		}
+		return documentURL;
+	}
+
+	private int retrieveDocId() {
+		int docId = 0 ;
+		DatabaseConection dbCon = new DatabaseConection(ServerConfiguration.getInstance());
+		Connection connection = dbCon.getMySqlConnection();
+		docId = DatabaseHelper.getDocumentIdfromDatabase(connection, getDocumentURL());
+
+		return docId;
+	}
+
+	/**
+     * get UID from certificate 
+	 * @return
+	 */
+	private String retrieveLogin() {
+		String login = new String();
+		StringTokenizer strTok = new StringTokenizer(CN,",");
+		
+		while(strTok.hasMoreElements()) {
+			String token = strTok.nextToken();
+			token.trim();
+			if(token.startsWith(" ")) {
+				token = token.substring(1);
+			}
+
+			if(token.startsWith("CN")) {
+				int posEquals = token.indexOf('=');
+				token = token.substring(posEquals + 1, token.length());
+				login = token;
+				break;
+			}
+
+		}
+		return login;
+	}
+
+
+	
+	private X509Certificate retrieveCertificate() {
+		DetachedXMLSignatureApache detXML = new DetachedXMLSignatureApache();
+		X509Certificate cert = null;
+		try {
+			cert = detXML.getX509Certificate(signatureDoc);
+		} catch (XMLSecurityException e) {
+			e.printStackTrace();
+		} catch (ParserConfigurationException e) {
+			e.printStackTrace();
+		}
+		return cert;
+	}
+	
+	
+	
+	/**
+	 * @return
+	 */
+	public String retrieveCN() {
+		X509Certificate cert = null;
+		XMLSignature dSig = null;
+		try {
+			dSig = new XMLSignature(signatureDoc.getDocumentElement(),"");
+
+			cert = dSig.getKeyInfo().getX509Certificate();
+
+		} catch (XMLSignatureException e1) {
+			e1.printStackTrace();
+		} catch (XMLSecurityException e1) {
+			e1.printStackTrace();
+		}
+		String CN = cert.getSubjectDN().getName();
+		return CN;
+	}
+
+
+
+
+	public static void main(String[] args) throws Exception {
+		Document doc = XMLSignatureHelper.getXMLSignatureFromXMLFile("dist/signatures/signature.xml");
+		if(doc == null) {
+			System.out.println("dist je null");
+		}
+		//XMLSignatureHelper.printDOMDocument(doc);
+		SignatureModel sigModel = new SignatureModel(doc);
+		System.out.println(sigModel.getCN());
+		System.out.println(sigModel.getLogin());
+		System.out.println(sigModel.getDocumentURL());
+		System.out.println(sigModel.getDocid());
+
+	}
+
+	public X509Certificate getCertificate() {
+		return certificate;
+	}
+
+	public void setCertificate(X509Certificate certificate) {
+		this.certificate = certificate;
+	}
+
+}

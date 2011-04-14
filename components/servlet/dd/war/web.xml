@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
+
+<web-app>
+<!--
+   <servlet>
+      <servlet-name>StocksSessionServlet</servlet-name>
+      <display-name>Simple Session Servlet</display-name>
+     <servlet-class>org.topon.signatures.jbean.StocksServlet</servlet-class>
+
+      <load-on-startup>1</load-on-startup>
+   </servlet>
+
+   <servlet-mapping>
+      <servlet-name>StocksSessionServlet</servlet-name>
+      <url-pattern>/StocksSessionServlet</url-pattern>
+   </servlet-mapping>
+-->
+   <servlet>
+      <servlet-name>SignatureStore</servlet-name>
+      <display-name>Signature Store</display-name>
+     <servlet-class>org.topon.signatures.servlet.SignatureStore</servlet-class>
+
+      <load-on-startup>1</load-on-startup>
+   </servlet>
+
+   <servlet-mapping>
+      <servlet-name>SignatureStore</servlet-name>
+      <url-pattern>/SignatureStore</url-pattern>
+   </servlet-mapping>
+
+  <servlet>
+      <servlet-name>DocumentsStore</servlet-name>
+      <display-name>Documents Store</display-name>
+     <servlet-class>org.topon.signatures.servlet.DocumentsStore</servlet-class>
+
+      <load-on-startup>1</load-on-startup>
+   </servlet>
+
+   <servlet-mapping>
+      <servlet-name>DocumentsStore</servlet-name>
+      <url-pattern>/DocumentsStore</url-pattern>
+   </servlet-mapping>
+
+  <servlet>
+      <servlet-name>CA</servlet-name>
+      <display-name>Certification Authority</display-name>
+     <servlet-class>org.topon.signatures.servlet.CA</servlet-class>
+
+      <load-on-startup>1</load-on-startup>
+   </servlet>
+
+   <servlet-mapping>
+      <servlet-name>CA</servlet-name>
+      <url-pattern>/CA</url-pattern>
+   </servlet-mapping>
+
+
+
+   <session-config>
+      <session-timeout>0</session-timeout>
+   </session-config>
+
+</web-app>

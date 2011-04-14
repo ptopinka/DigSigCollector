@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/xmlsignatures/!svn/ver/2/trunk/components/servlet/src/org/topon/signatures/jbean
+END
+Signature.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/xmlsignatures/!svn/ver/2/trunk/components/servlet/src/org/topon/signatures/jbean/Signature.java
+END
+SignatureBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/xmlsignatures/!svn/ver/2/trunk/components/servlet/src/org/topon/signatures/jbean/SignatureBean.java
+END
+SignatureHome.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/xmlsignatures/!svn/ver/2/trunk/components/servlet/src/org/topon/signatures/jbean/SignatureHome.java
+END
+StocksServlet.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/xmlsignatures/!svn/ver/2/trunk/components/servlet/src/org/topon/signatures/jbean/StocksServlet.java
+END

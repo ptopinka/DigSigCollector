@@ -1,0 +1,40 @@
+8
+
+dir
+24
+http://b140/xmlsignatures/trunk/components/servlet/dd/war
+http://b140/xmlsignatures
+
+
+
+2007-07-25T11:16:40.944526Z
+2
+topon
+
+
+svn:special svn:externals svn:needs-lock
+
+jboss-web.xml
+file
+
+
+
+
+2002-07-20T19:28:24.000000Z
+307a836a4c98228033a19a3aaf1a164b
+2007-07-25T11:16:40.944526Z
+2
+topon
+
+web.xml
+file
+60
+
+
+
+2007-08-12T10:54:23.468750Z
+119648a0a98b25f9948faa45a9b1edb0
+2007-08-13T06:25:32.786482Z
+60
+topon
+

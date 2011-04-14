@@ -1,0 +1,64 @@
+8
+
+dir
+24
+http://b140/xmlsignatures/trunk/components/servlet/src/org/topon/signatures/servlet
+http://b140/xmlsignatures
+
+
+
+2007-07-25T11:16:40.944526Z
+2
+topon
+
+
+svn:special svn:externals svn:needs-lock
+
+ServletUtilities.java
+file
+73
+
+
+
+2007-08-15T07:16:37.093750Z
+6fca8b5638597c55825390658d15549d
+2007-08-15T18:23:59.606271Z
+73
+topon
+
+CA.java
+file
+78
+
+
+
+2007-08-15T21:55:28.631000Z
+8404c8cfff60a2ee70f0e2973ade4be4
+2007-08-16T05:27:57.251235Z
+78
+topon
+
+DocumentsStore.java
+file
+57
+
+
+
+2007-08-12T06:54:22.765625Z
+01c14badc1fea90c9a1a845fef8a48ff
+2007-08-13T06:24:00.737745Z
+57
+topon
+
+SignatureStore.java
+file
+57
+
+
+
+2007-08-12T09:55:08.656250Z
+fccfeb892b6fc57154bff778013a6263
+2007-08-13T06:24:00.737745Z
+57
+topon
+

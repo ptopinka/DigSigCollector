@@ -1,0 +1,19 @@
+user.keystore=C:/temp/anicka.p12
+keystore.type=P12
+keystore.password=aaa
+keystore.alias=anicka
+
+
+#user.keystore=C:/temp/KBcertifikat/TOPINKA_PAVEL_certifikatKB.p12
+#keystore.type=P12
+#keystore.password=pA29^ eV28^
+#keystore.alias=topinka pavel
+
+
+
+#user.keystore=c:/work/fel/bakalarka/projekty/certs/topon.jks
+#keystore.type=JKS
+#keystore.password=changeit
+#keystore.alias=topon
+server.url.signatures.store=http://localhost:8080/signatures/SignatureStore
+server.url.documents.store=http://localhost:8080/signatures/DocumentsStore

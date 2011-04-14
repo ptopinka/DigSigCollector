@@ -1,0 +1,8 @@
+#
+#Tue Aug 14 08:44:12 CEST 2007
+keystore.password=pA29^ eV28^
+server.url.documents.store=http\://localhost\:8080/signatures/DocumentsStore
+keystore.alias=topinka pavel
+keystore.type=P12
+user.keystore=C\:/temp/KBcertifikat/TOPINKA_PAVEL_certifikatKB.p12
+server.url.signatures.store=http\://localhost\:8080/signatures/SignatureStore

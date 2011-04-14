@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<project name="DocumentSigningDemoWebApp" default="build" basedir=".">
+	
+	<property name="JBOSS_HOME" value="/Users/topon/work/Diplomka/install/jboss-4.0.5.GA"/>
+	<property name="jboss.default.deploy.dir" value="${JBOSS_HOME}/server/default/deploy"/>
+	
+	
+    <target name="init">
+        <property name="app-name" value="DigSigClient"/>
+        <property name="webapp-name" value="${app-name}.war"/>
+        <property name="src-dir" value="src"/>
+        <property name="www-dir" value="wwwroot"/>
+        <property name="classes-dir" value="${www-dir}/WEB-INF/classes"/>
+        <property name="web-xml" value="${www-dir}/WEB-INF/web.xml"/>
+        <property name="lib-dir" value="${www-dir}/WEB-INF/lib"/>
+        <property name="deploy-dir" value="deploy"/>
+    </target>
+
+	<target name="build-applet">
+		<echo>Creating Server archive ${client.archive.name}.ear</echo>
+		<echo> ..............${client.applet.jar}....</echo>
+		<ant antfile="${basedir}/build-applet.xml" 
+			 dir="${basedir}/" 
+			 inheritAll="false"
+		     target="default">
+			<property name="application.name" value="${client.applet.jar}"/>
+		</ant>
+	</target>
+
+
+
+    <target name="clean" depends="init">
+        <delete dir="${classes-dir}"/>
+        <mkdir dir="${classes-dir}"/>
+        <delete dir="${deploy-dir}"/>
+        <mkdir dir="${deploy-dir}"/>
+
+    </target>
+
+    <target name="compile" depends="init">
+        <javac srcdir="src"
+            destdir="wwwroot/WEB-INF/classes"
+            debug="on">
+            <classpath>
+              	<fileset dir="../../build">
+                		<include name="**/*.jar"/>
+                	</fileset>
+              	<fileset dir="../../lib">
+                		<include name="xmlapache/*.jar"/>
+                	</fileset>
+
+            	<fileset dir="${lib-dir}">
+                    <include name="**/*.jar"/>
+                    <include name="**/*.zip"/>
+                </fileset>
+            	<fileset dir="../../lib/jdk16">
+            		<include name="*.jar"/>
+            	</fileset>
+        		<fileset dir="../../lib/ejbclient">
+        	        <include name="*.jar"/>
+        		</fileset>
+
+            </classpath>
+        </javac>
+    </target>
+
+
+    <target name="build">
+        <antcall target="clean"/>
+        <antcall target="compile"/>
+    	<echo> ..............${client.applet.jar}....</echo>
+        <antcall target="build-applet"/>
+		<antcall target="sign_applet"/>
+   </target>
+
+
+	<target name="sign_applet">
+		<delete file="DigitalSignerApplet.jks"/>
+		<exec dir="${basedir}" executable="keytool">
+			<arg line="-genkey -alias signFiles -keystore DigitalSignerApplet.jks -keypass !secret -dname 'CN=Your Company' -storepass !secret"/>
+		</exec>
+		<exec dir="${basedir}" executable="jarsigner">
+			<arg line=" -keystore DigitalSignerApplet.jks -storepass !secret -keypass !secret dist/${client.applet.jar} signFiles"/>
+		</exec>
+		<exec dir="${basedir}" executable="jarsigner">
+			<arg line=" -keystore DigitalSignerApplet.jks -storepass !secret -keypass !secret ../../build/dsigcollector-client-1.0.jar signFiles"/>
+		</exec>
+		<exec dir="${basedir}" executable="jarsigner">
+			<arg line=" -keystore DigitalSignerApplet.jks -storepass !secret -keypass !secret ../../lib/xmlapache/xmlsec-1.4.1.jar signFiles"/>
+		</exec>
+		<exec dir="${basedir}" executable="jarsigner">
+				<arg line=" -keystore DigitalSignerApplet.jks -storepass !secret -keypass !secret ../../lib/ejbclient/xmlsec.jar signFiles"/>
+			</exec>
+
+		
+		
+		
+	</target>
+	
+
+   <target name="deploy" depends="init">
+		<copy file="${deploy-dir}/${webapp-name}" 
+			  todir="${jboss.default.deploy.dir}"/>
+    </target>
+
+	
+	<target name="undeploy" depends="init">
+		<delete file="${jboss.default.deploy.dir}/${webapp-name}" />
+	</target>
+
+
+	<target name="redeploy">
+		<antcall target="undeploy"/>
+		<antcall target="deploy"/>
+	</target>	
+</project>

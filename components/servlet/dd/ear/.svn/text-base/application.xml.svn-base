@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<application>
+	<display-name>Stock</display-name>
+	<module>
+	<web>
+		<web-uri>dsigcollector.war</web-uri>
+		<context-root>/signatures</context-root>
+	</web>
+	</module>
+
+	<module>
+		<ejb>dsigcollector.jar</ejb>
+	</module>
+
+</application>
+

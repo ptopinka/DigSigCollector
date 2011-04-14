@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/xmlsignatures/!svn/ver/24/trunk/conf
+END
+server.properties
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/xmlsignatures/!svn/ver/61/trunk/conf/server.properties
+END
+anicka.properties
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/xmlsignatures/!svn/ver/87/trunk/conf/anicka.properties
+END
+oracle.sql
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/xmlsignatures/!svn/ver/3/trunk/conf/oracle.sql
+END
+mysql.sql
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/xmlsignatures/!svn/ver/87/trunk/conf/mysql.sql
+END
+identity.properties
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/xmlsignatures/!svn/ver/87/trunk/conf/identity.properties
+END
+identityP12.properties
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/xmlsignatures/!svn/ver/24/trunk/conf/identityP12.properties
+END

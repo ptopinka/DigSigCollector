@@ -1,0 +1,1 @@
+Class-Path: lib/mysql-connector-java-5.0.6-bin.jar

@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/xmlsignatures/!svn/ver/2/trunk/components/servlet/dd/war
+END
+jboss-web.xml
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/xmlsignatures/!svn/ver/2/trunk/components/servlet/dd/war/jboss-web.xml
+END
+web.xml
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/xmlsignatures/!svn/ver/60/trunk/components/servlet/dd/war/web.xml
+END

@@ -1,0 +1,333 @@
+	<project name="main-build" default="help">
+
+	<property file="antbuild.properties"/>
+	<property name="lib.dir" value="lib"/>
+	<property name="build.dir" value="build"/>
+	<property name="dist.dir" value="dist"/>
+	
+	
+	<path id="compile.path">
+        <pathelement path="${lib.dir}/jdbc/mysql-connector-java-5.0.6-bin.jar"/>
+        <pathelement path="${lib.dir}/xmlapache/xalan.jar"/>
+        <pathelement path="${lib.dir}/xmlapache/xmlsec-1.4.1.jar"/>
+        <pathelement path="${lib.dir}/xmlapache/serializer.jar"/>
+        <pathelement path="${lib.dir}/xmlapache/commons-logging.jar"/>
+        <pathelement path="${lib.dir}/xmlapache/commons-logging-api.jar"/>
+        <pathelement path="${lib.dir}/swing-layout-1.0.jar"/>
+	    <pathelement path="${lib.dir}/jdk16/plugin.jar"/>
+		<pathelement path="${lib.dir}/junit/junit-4.8.2.jar"/>
+		<fileset dir="${lib.dir}/jdk16">
+	        <include name="*.jar"/>
+		</fileset>
+
+		<fileset dir="${lib.dir}/ejbclient">
+	        <include name="*.jar"/>
+		</fileset>
+		<fileset dir="${lib.dir}/bc">
+	        <include name="*.jar"/>
+		</fileset>
+
+	</path>
+	
+    <patternset id="all.components.pattern">
+	        <include name="**/src"/>
+    	    <include name="signatures"/>
+	</patternset>
+	
+    <path id="components.sources">
+        <dirset dir="${basedir}/components">
+             <patternset refid="all.components.pattern"/>
+        </dirset>
+    </path>
+    	
+
+	<!--
+		Compile all source classes into build.dir
+	-->
+	<target name="compile">
+        <mkdir dir="${build.dir}/classes"/>
+        <javac destdir="${build.dir}/classes"
+            deprecation="${build.compiler.deprecation}"
+            verbose="${build.compiler.verbose}"
+            debug="${build.compiler.debug}"
+            nowarn="${build.compiler.nowarn}"
+            optimize="${build.compiler.optimize}"
+            depend="${build.compiler.depend}"
+            includeantruntime="${build.compiler.includeantruntime}"
+            includejavaruntime="${build.compiler.includejavaruntime}">
+            <src refid="components.sources"/>
+            <classpath refid="compile.path"/>
+        </javac>
+		<antcall target="client-jar"/>
+	</target>
+	
+
+		<target name="compileOnly">
+	        <mkdir dir="${build.dir}/classes"/>
+	        <javac destdir="${build.dir}/classes"
+	            deprecation="${build.compiler.deprecation}"
+	            verbose="${build.compiler.verbose}"
+	            debug="${build.compiler.debug}"
+	            nowarn="${build.compiler.nowarn}"
+	            optimize="${build.compiler.optimize}"
+	            depend="${build.compiler.depend}"
+	            includeantruntime="${build.compiler.includeantruntime}"
+	            includejavaruntime="${build.compiler.includejavaruntime}">
+	            <src refid="components.sources"/>
+	            <classpath refid="compile.path"/>
+	        </javac>
+		</target>
+				
+		
+	<!--
+		Create Client distribution
+	
+	basedir="${build.dir}"-->
+
+	<target name="client-jar">
+        <echo>Creating Client archive ${client.archive.name}...</echo>
+
+		
+		<!-- base directory for distribution target -->
+		<property name="dist.home" value="${dist.dir}" />
+		<!-- base directory for compilation targets -->
+		<property name="build.home" value="${build.dir}" />
+		<!-- The base directory for all libraries (jar) files -->
+		<property name="lib.home" value="${lib.dir}" />
+
+		<mkdir dir="${dist.home}"/>		
+		
+		
+		
+		
+		
+		 <pathconvert property="libs.project" pathsep=" ">
+		    <mapper>
+		      <chainedmapper>
+
+		        <!-- remove absolute path -->
+		        <flattenmapper />
+
+		        <!-- add lib/ prefix -->
+		        <globmapper from="*" to="lib/*" />
+		      </chainedmapper>
+		    </mapper>
+
+		    <path>
+
+		      <!-- lib.home contains all jar files, in several subdirectories -->
+		      <fileset dir="${lib.home}">
+		        <include name="**/*.jar" />
+		      	<exclude  name="${client.archive.name}"/>
+		      	<exclude name="**/ant*.jar"/>
+		      	<exclude name="jdk16/plugin.jar"/>
+		      	<exclude name="**/jboss*.jar"/>
+		      </fileset>
+		    </path>
+		  </pathconvert>
+
+		<echo>${libs.project}</echo>
+		
+		  <!-- create the jar -->
+		  <jar jarfile="${build.dir}/${client.archive.name}" basedir="${build.home}/classes">
+
+		    <!-- define MANIFEST.MF -->
+		    <manifest>
+		      <attribute name="Built-By" value="${user.name}" />
+		      <attribute name="Main-Class" value="org.topon.client.Client" />
+		      <section name="common">
+		        <attribute name="Specification-Title" value="${component.name}" />
+		        <attribute name="Specification-Version" value="${component.version}" />
+		        <attribute name="Specification-Vendor" value="${component.vendor}" />
+		        <attribute name="Implementation-Title" value="${component.name}" />
+		        <attribute name="Implementation-Version" value="${component.version} ${TODAY}" />
+		        <attribute name="Implementation-Vendor" value="${component.vendor}" />
+		      </section>
+
+		      <!-- finally, use the magically generated libs path -->
+		      <attribute name="Class-Path" value="${libs.project}" />
+		    </manifest>
+		  </jar>
+	</target>
+		
+		
+	<target name="client" depends="compile">
+
+		
+		
+		
+		<!--
+			Call script to create applet client distribution
+		-->
+		<echo>Creating Server archive client applet </echo>
+		<ant antfile="${basedir}/components/applet/build.xml" 
+			 dir="${basedir}/components/applet/" 
+			 inheritAll="false"
+		     >
+			<property name="application.name" value="${product.name}"/>
+			<property name="client.applet.jar" value="${client.applet.jar}"/>
+		</ant>
+		
+		
+	</target>
+	
+	<target name="run_client">
+		<echo>running client... </echo>
+		<java jar="${lib.dir}/${client.archive.name}" fork="true">
+			<classpath refid="compile.path"/>
+		</java>
+	</target>
+	<!--
+		Call script to create server distribution
+	-->
+	<target name="server" depends="war"> <!-- zavisi na WAR protoze se potom kopiruje do earu -->
+		<echo>Creating Server archive ${server.archive.name}</echo>
+		<ant antfile="${basedir}/components/servlet/build.xml" 
+			 dir="${basedir}/components/servlet/" 
+			 inheritAll="false"
+		     target="create_ear">
+			<property name="server.archive.name" value="${server.archive.name}"/>
+			<property name="client.applet.war" value="${client.applet.war}"/>
+		</ant>
+	</target>
+
+
+	
+		
+		
+	<!--
+		Install Server part into JBOSS
+	-->
+	<target name="install_server">
+		<ant antfile="${basedir}/components/servlet/build.xml" 
+			 dir="${basedir}/components/servlet/" 
+			 inheritAll="false"
+		     target="undeploy">
+			<property name="jboss.default.deploy.dir" 
+				      value="${JBOSS_HOME}/server/default/deploy"/>
+		</ant>
+		<ant antfile="${basedir}/components/servlet/build.xml" 
+			 dir="${basedir}/components/servlet/" 
+			target="deploy"
+			 inheritAll="false">
+				<property name="jboss.default.deploy.dir" 
+				          value="${JBOSS_HOME}/server/default/deploy"/>
+		</ant>
+		
+	</target>
+
+		
+		
+		
+		
+	<!--
+		Create both distributions
+	-->
+	<target name="dist" depends="client,server">
+		<mkdir dir="${dist.dir}"/>
+		<mkdir dir="${dist.dir}/lib"/>
+		<copy file="${build.dir}/${client.archive.name}" todir="${dist.dir}"/>
+		<copy file="${basedir}/components/servlet/${server.archive.name}" todir="${dist.dir}"/>
+		<copy todir="${dist.dir}/lib" filtering="off">
+		    <!-- remove the directory hierarchy: lib contains no subdirectories -->
+		    <flattenmapper />
+		    <fileset dir="${lib.dir}" >
+		    	<include name="**/*.jar"/>
+		    	<exclude name="ant*/**/*.jar"/>
+		    </fileset>
+		  </copy>
+
+	
+	</target>
+	
+
+	<target name="distdeploy" depends="dist">
+		<echo message="${JBOSS_HOME}/server/default/deploy/${server.archive.name}"/>
+		<delete file="${JBOSS_HOME}/server/default/deploy/${client.applet.war}"></delete>
+		<delete file="${JBOSS_HOME}/server/default/deploy/${server.archive.name}"></delete>
+		<copy file="${dist.dir}/${client.applet.war.todeploy}" 
+			  toDir="${JBOSS_HOME}/server/default/deploy/"/>
+		<copy file="${dist.dir}/${server.archive.name}"
+		      toDir="${JBOSS_HOME}/server/default/deploy"/>
+	</target>
+		
+		
+    <target name="war">
+			<property name="client.war.tmp" value="${dist.dir}/client_war_tmp"/>
+    	    <property name="web-xml" value="${client.war.tmp}/WEB-INF/web.xml"/>
+			<property name="www-dir" value="wwwroot"/>
+
+    		<mkdir dir="${client.war.tmp}"/>    		
+	        <copy file="${basedir}/components/applet/dist/${client.applet.jar}"
+	        	  toDir="${client.war.tmp}"/>
+
+    		<copy  toDir="${client.war.tmp}">
+			    <fileset dir="components/applet/${www-dir}" >
+			    	<include name="**/*"/>
+			    </fileset>
+    		</copy>
+    	
+			<copy todir="${client.war.tmp}/WEB-INF/lib" filtering="off">
+			    <flattenmapper />
+			    <fileset dir="${lib.dir}" >
+			    	<include name="**/*.jar"/>
+			    	<exclude name="**/ant*.jar"/>
+			    	<exclude name="**/*log4j.jar"/>
+			    	<exclude name="**/*jboss*.jar"/>
+			    	<exclude name="**/*plugin.jar"/>
+			    </fileset>
+		   </copy>    	
+    	<mkdir dir="${client.war.tmp}/lib"/>
+		<copy todir="${client.war.tmp}/lib" filtering="off">
+		    <flattenmapper />
+		    <fileset dir="${lib.dir}" >
+		    	<include name="**/*.jar"/>
+		    	<exclude name="**/ant*.jar"/>
+		    	<exclude name="**/*log4j.jar"/>
+		    	<exclude name="**/*jboss*.jar"/>
+		    	<exclude name="**/*plugin.jar"/>
+		    </fileset>
+	   </copy>    	
+			<copy todir="${client.war.tmp}/WEB-INF/lib" filtering="off">
+		    	<fileset dir="${build.dir}" >
+		    		<include name="${client.archive.name}"/>
+		    	</fileset>
+	   		</copy>     	
+			<copy todir="${client.war.tmp}" filtering="off">
+		    	<fileset dir="${build.dir}" >
+	    			<include name="${client.archive.name}"/>
+	    		</fileset>
+   			</copy>     	
+
+	    	
+			
+	    	<war compress="true" destfile="${dist.dir}/${client.applet.war}" webxml="${web-xml}" >
+	            <fileset dir="${client.war.tmp}">
+	                <include name="**/*.*"/>
+	            </fileset>
+	        </war>
+    		<copy file="${dist.dir}/${client.applet.war}" tofile="${dist.dir}/${client.applet.war.todeploy}"/>
+	</target>
+		
+		
+		
+		
+	<target name="all" depends="clean, compile,client,server,dist">
+	</target>
+	
+	
+	<target name="install" depends="install_server">
+	</target>
+	
+	<target name="help">
+	</target>
+
+	<target name="clean">
+		<delete file="${lib.dir}/${client.archive.name}"/>
+		<delete dir="${basedir}/components/servlet/dist"/>
+		<delete file="${basedir}/components/servlet/${server.archive.name}"/>
+		<delete dir="${dist.dir}"/>
+		<delete dir="${build.dir}"/>
+	</target>
+
+</project>

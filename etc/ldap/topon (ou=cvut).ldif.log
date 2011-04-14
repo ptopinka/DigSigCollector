@@ -1,0 +1,332 @@
+# 	This file was generated on 2007-08-22 at 09:59:34
+# 	from the ldap://localhost:64441 (bound as uid=topon,ou=topon,dc=in,dc=systinet,dc=com)
+# 	by Softerra LDAP Administrator v3 [ http://www.ldapadministrator.com ]
+#!RESULT ERROR
+#!CONNECTION ldap://localhost:10389
+#!DATE 2010-12-28T14:15:16.869
+#!ERROR [LDAP: error code 32 - NO_SUCH_OBJECT: failed for     Add Request : ClientEntry     dn: dc=in,dc=systinet,dc=com     objectClass: top     objectClass: domain     dc: in : ERR_268 Cannot find a partition for dc=in,dc=systinet,dc=com]
+dn: dc=in,dc=systinet,dc=com
+dc: in
+objectClass: top
+objectClass: domain
+
+#!RESULT ERROR
+#!CONNECTION ldap://localhost:10389
+#!DATE 2010-12-28T14:15:16.881
+#!ERROR [LDAP: error code 32 - NO_SUCH_OBJECT: failed for     Add Request : ClientEntry     dn: cn=Directory Administrators, dc=in,dc=systinet,dc=com     objectClass: top     objectClass: groupofuniquenames     uniqueMember: uid=topon,ou=topon,dc=in,dc=systinet,dc=com     cn: Directory Administrators : ERR_268 Cannot find a partition for cn=Directory Administrators, dc=in,dc=systinet,dc=com]
+dn: cn=Directory Administrators, dc=in,dc=systinet,dc=com
+objectClass: top
+objectClass: groupofuniquenames
+cn: Directory Administrators
+uniqueMember: uid=topon,ou=topon,dc=in,dc=systinet,dc=com
+
+#!RESULT ERROR
+#!CONNECTION ldap://localhost:10389
+#!DATE 2010-12-28T14:15:16.887
+#!ERROR [LDAP: error code 32 - NO_SUCH_OBJECT: failed for     Add Request : ClientEntry     dn: ou=Groups, dc=in,dc=systinet,dc=com     objectClass: top     objectClass: organizationalunit     ou: Groups : ERR_268 Cannot find a partition for ou=Groups, dc=in,dc=systinet,dc=com]
+dn: ou=Groups, dc=in,dc=systinet,dc=com
+objectClass: top
+objectClass: organizationalunit
+ou: Groups
+
+#!RESULT ERROR
+#!CONNECTION ldap://localhost:10389
+#!DATE 2010-12-28T14:15:16.891
+#!ERROR [LDAP: error code 32 - NO_SUCH_OBJECT: failed for     Add Request : ClientEntry     dn: ou=People, dc=in,dc=systinet,dc=com     objectClass: top     objectClass: organizationalunit     ou: People : ERR_268 Cannot find a partition for ou=People, dc=in,dc=systinet,dc=com]
+dn: ou=People, dc=in,dc=systinet,dc=com
+objectClass: top
+objectClass: organizationalunit
+ou: People
+
+#!RESULT ERROR
+#!CONNECTION ldap://localhost:10389
+#!DATE 2010-12-28T14:15:16.896
+#!ERROR [LDAP: error code 32 - NO_SUCH_OBJECT: failed for     Add Request : ClientEntry     dn: ou=Special Users,dc=in,dc=systinet,dc=com     objectClass: top     objectClass: organizationalUnit     ou: Special Users     description: Special Administrative Accounts : ERR_268 Cannot find a partition for ou=Special Users,dc=in,dc=systinet,dc=com]
+dn: ou=Special Users,dc=in,dc=systinet,dc=com
+objectClass: top
+objectClass: organizationalUnit
+ou: Special Users
+description: Special Administrative Accounts
+
+#!RESULT ERROR
+#!CONNECTION ldap://localhost:10389
+#!DATE 2010-12-28T14:15:16.901
+#!ERROR [LDAP: error code 32 - NO_SUCH_OBJECT: failed for     Add Request : ClientEntry     dn: cn=Accounting Managers,ou=groups,dc=in,dc=systinet,dc=com     objectClass: top     objectClass: groupOfUniqueNames     ou: groups     cn: Accounting Managers     description: People who can manage accounting entries : ERR_268 Cannot find a partition for cn=Accounting Managers,ou=groups,dc=in,dc=systinet,dc=com]
+dn: cn=Accounting Managers,ou=groups,dc=in,dc=systinet,dc=com
+objectClass: top
+objectClass: groupOfUniqueNames
+cn: Accounting Managers
+ou: groups
+description: People who can manage accounting entries
+
+#!RESULT ERROR
+#!CONNECTION ldap://localhost:10389
+#!DATE 2010-12-28T14:15:16.905
+#!ERROR [LDAP: error code 32 - NO_SUCH_OBJECT: failed for     Add Request : ClientEntry     dn: cn=HR Managers,ou=groups,dc=in,dc=systinet,dc=com     objectClass: top     objectClass: groupOfUniqueNames     ou: groups     cn: HR Managers     description: People who can manage HR entries : ERR_268 Cannot find a partition for cn=HR Managers,ou=groups,dc=in,dc=systinet,dc=com]
+dn: cn=HR Managers,ou=groups,dc=in,dc=systinet,dc=com
+objectClass: top
+objectClass: groupOfUniqueNames
+cn: HR Managers
+ou: groups
+description: People who can manage HR entries
+
+#!RESULT ERROR
+#!CONNECTION ldap://localhost:10389
+#!DATE 2010-12-28T14:15:16.909
+#!ERROR [LDAP: error code 32 - NO_SUCH_OBJECT: failed for     Add Request : ClientEntry     dn: cn=QA Managers,ou=groups,dc=in,dc=systinet,dc=com     objectClass: top     objectClass: groupOfUniqueNames     ou: groups     cn: QA Managers     description: People who can manage QA entries : ERR_268 Cannot find a partition for cn=QA Managers,ou=groups,dc=in,dc=systinet,dc=com]
+dn: cn=QA Managers,ou=groups,dc=in,dc=systinet,dc=com
+objectClass: top
+objectClass: groupOfUniqueNames
+cn: QA Managers
+ou: groups
+description: People who can manage QA entries
+
+#!RESULT ERROR
+#!CONNECTION ldap://localhost:10389
+#!DATE 2010-12-28T14:15:16.912
+#!ERROR [LDAP: error code 32 - NO_SUCH_OBJECT: failed for     Add Request : ClientEntry     dn: cn=PD Managers,ou=groups,dc=in,dc=systinet,dc=com     objectClass: top     objectClass: groupOfUniqueNames     ou: groups     cn: PD Managers     description: People who can manage engineer entries : ERR_268 Cannot find a partition for cn=PD Managers,ou=groups,dc=in,dc=systinet,dc=com]
+dn: cn=PD Managers,ou=groups,dc=in,dc=systinet,dc=com
+objectClass: top
+objectClass: groupOfUniqueNames
+cn: PD Managers
+ou: groups
+description: People who can manage engineer entries
+
+#!RESULT ERROR
+#!CONNECTION ldap://localhost:10389
+#!DATE 2010-12-28T14:15:16.917
+#!ERROR [LDAP: error code 32 - NO_SUCH_OBJECT: failed for     Add Request : ClientEntry     dn: ou=topon,dc=in,dc=systinet,dc=com     objectClass: top     objectClass: organizationalunit     ou: topon     description: Bakalarska prace Sber Digitalnich podpisu     telephoneNumber: 777 33 10 80						 : ERR_268 Cannot find a partition for ou=topon,dc=in,dc=systinet,dc=com]
+dn: ou=topon,dc=in,dc=systinet,dc=com
+telephoneNumber: 777 33 10 80						
+ou: topon
+description: Bakalarska prace Sber Digitalnich podpisu
+objectClass: top
+objectClass: organizationalunit
+
+#!RESULT ERROR
+#!CONNECTION ldap://localhost:10389
+#!DATE 2010-12-28T14:15:16.922
+#!ERROR [LDAP: error code 32 - NO_SUCH_OBJECT: failed for     Add Request : ClientEntry     dn: uid=topon,ou=topon,dc=in,dc=systinet,dc=com     objectClass: top     objectClass: person     objectClass: organizationalPerson     objectClass: inetorgperson     uid: topon     mail: topon@seznam.cz     sn: topon     userPassword: '0x7B 0x53 0x53 0x48 0x41 0x7D 0x6D 0x34 0x49 0x4C 0x4D 0x37 0x36 0x4C 0x6F 0x48 ...'     cn: topon     givenName: topon     telephoneNumber: 777331080 : ERR_268 Cannot find a partition for uid=topon,ou=topon,dc=in,dc=systinet,dc=com]
+dn: uid=topon,ou=topon,dc=in,dc=systinet,dc=com
+telephoneNumber: 777331080
+mail: topon@seznam.cz
+uid: topon
+givenName: topon
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetorgperson
+sn: topon
+userPassword: {SSHA}m4ILM76LoHP6RFUEQeNzqgufKqz0efc6bR8maA==
+cn: topon
+
+#!RESULT ERROR
+#!CONNECTION ldap://localhost:10389
+#!DATE 2010-12-28T14:15:16.929
+#!ERROR [LDAP: error code 32 - NO_SUCH_OBJECT: failed for     Add Request : ClientEntry     dn: cn=lojza,ou=People,dc=in,dc=systinet,dc=com     objectClass: person     objectClass: organizationalPerson     objectClass: inetOrgPerson     objectClass: top     sn: lojza     cn: lojza     userCertificate: '0x30 0x82 0x03 0x3A 0x30 0x82 0x02 0xA3 0xA0 0x03 0x02 0x01 0x02 0x02 0x10 0x7A ...' : ERR_268 Cannot find a partition for cn=lojza,ou=People,dc=in,dc=systinet,dc=com]
+dn: cn=lojza,ou=People,dc=in,dc=systinet,dc=com
+sn: lojza
+cn: lojza
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: top
+userCertificate:: MIIDOjCCAqOgAwIBAgIQepwLFOALU9+UK+gAYo34yjANBgkqhkiG9w0BAQ
+ UFADBVMQswCQYDVQQGEwJaQTElMCMGA1UEChMcVGhhd3RlIENvbnN1bHRpbmcgKFB0eSkgTHRkL
+ jEfMB0GA1UEAxMWVGhhd3RlIENvZGUgU2lnbmluZyBDQTAeFw0wNzAxMDgwMDAwMDBaFw0wODAx
+ MDgyMzU5NTlaMIGGMQswCQYDVQQGEwJDWjEXMBUGA1UECBMOQ3plY2ggUmVwdWJsaWMxDzANBgN
+ VBAcTBlByYWd1ZTEWMBQGA1UEChMNQVpVQ0hBIHMuci5vLjEdMBsGA1UECxMUU29mdHdhcmUgRG
+ V2ZWxvcG1lbnQxFjAUBgNVBAMTDUFaVUNIQSBzLnIuby4wgZ8wDQYJKoZIhvcNAQEBBQADgY0AM
+ IGJAoGBAOHNGEZ/hE0du4q6/Db3RNzUveHEGird8Heroioqnj/c99AujE1grk7h1gVvDFbEziU0
+ P5381TazJZPq2/H1itmpQC1UjhLCo62tbVUSEGPeqxjX5dDHbpjRCDenozMNxTp8CwplnKWTIFY
+ 6KB5BkHg/SltoGq8JbMS5JSCN+kCNAgMBAAGjgdgwgdUwDAYDVR0TAQH/BAIwADA+BgNVHR8ENz
+ A1MDOgMaAvhi1odHRwOi8vY3JsLnRoYXd0ZS5jb20vVGhhd3RlQ29kZVNpZ25pbmdDQS5jcmwwH
+ wYDVR0lBBgwFgYIKwYBBQUHAwMGCisGAQQBgjcCARYwHQYDVR0EBBYwFDAOMAwGCisGAQQBgjcC
+ ARYDAgeAMDIGCCsGAQUFBwEBBCYwJDAiBggrBgEFBQcwAYYWaHR0cDovL29jc3AudGhhd3RlLmN
+ vbTARBglghkgBhvhCAQEEBAMCBBAwDQYJKoZIhvcNAQEFBQADgYEAa/5CizJJSrNOTzbghobaYg
+ 77omFfzbch6iXX216xf6Mtwwz3sxj++q4ZXN2h2OBAw8hXLMr+hNVc8TAtz4ZCjcKYIM1FQddiz
+ GveYVTZnqlXSp7FQ/iQl/kuRfftuSDSssRfEnx8JfoeJ0zHjbZ1eFiWELVlJtYbeEvGKSBbTC4=
+
+#!RESULT ERROR
+#!CONNECTION ldap://localhost:10389
+#!DATE 2010-12-28T14:15:16.933
+#!ERROR [LDAP: error code 32 - NO_SUCH_OBJECT: failed for     Add Request : ClientEntry     dn: ou=CVUT,dc=in,dc=systinet,dc=com     objectClass: organizationalUnit     objectClass: top     ou: CVUT : ERR_268 Cannot find a partition for ou=CVUT,dc=in,dc=systinet,dc=com]
+dn: ou=CVUT,dc=in,dc=systinet,dc=com
+ou: CVUT
+objectClass: organizationalUnit
+objectClass: top
+
+#!RESULT ERROR
+#!CONNECTION ldap://localhost:10389
+#!DATE 2010-12-28T14:15:16.942
+#!ERROR [LDAP: error code 32 - NO_SUCH_OBJECT: failed for     Add Request : ClientEntry     dn: CN=topon,ou=CVUT,dc=in,dc=systinet,dc=com     objectClass: top     objectClass: person     objectClass: organizationalPerson     objectClass: inetOrgPerson     uid: topon@fel.cvut.cz     sn: topon     ou: CVUT     cn: topon     userCertificate;binary: '0x30 0x82 0x03 0xAF 0x30 0x82 0x02 0x97 0xA0 0x03 0x02 0x01 0x02 0x02 0x08 0x1D ...' : ERR_268 Cannot find a partition for CN=topon,ou=CVUT,dc=in,dc=systinet,dc=com]
+dn: CN=topon,ou=CVUT,dc=in,dc=systinet,dc=com
+sn: topon
+ou: CVUT
+cn: topon
+userCertificate;binary:: MIIDrzCCApegAwIBAgIIHSsyJwiZJ3wwDQYJKoZIhvcNAQEFBQA
+ wLTEPMA0GA1UEAwwGQ1ZVVENBMQ0wCwYDVQQKDARDVlVUMQswCQYDVQQGEwJDWjAeFw0wNzA4MT
+ MxNzUzNDRaFw0wOTA4MTIxODAzNDRaMHUxDjAMBgNVBAMMBXRvcG9uMQ0wCwYDVQQLDARDVlVUM
+ REwDwYDVQQLDAhyb2NuaWtfMTESMBAGCgmSJomT8ixkARkWAmluMRgwFgYKCZImiZPyLGQBGRYI
+ c3lzdGluZXQxEzARBgoJkiaJk/IsZAEZFgNjb20wgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoG
+ BAIqCYfoFtfG85/NPtF+JnBgtFXll1BN8McJmkEUrG1Dedydr6sqnGV7rCyWOVX8Nr16CIEx+57
+ N6HYq6W0QdUVFE8YjjzREGT/Fy+gfTeXtVOCvukEG1iW9yB/4RR0Lp+Bjx4EuF1pCY2Fa3Kq3Gu
+ yqszX8F23jiFAzXSgCVxxoZAgMBAAGjggENMIIBCTAMBgNVHRMBAf8EAjAAMA4GA1UdDwEB/wQE
+ AwIFoDA7BgNVHSUENDAyBggrBgEFBQcDAQYIKwYBBQUHAwIGCCsGAQUFBwMEBggrBgEFBQcDBQY
+ IKwYBBQUHAwcwHQYDVR0OBBYEFKG4+pJfhHlwYi1lC7t7xsn2PnduMB8GA1UdIwQYMBaAFEMyG+
+ XTMJnhxp6ry8Qv9WpWGOuIMGwGA1UdHwRlMGMwYaBfoF2GW2h0dHA6Ly9sb2NhbGhvc3Q6ODA4M
+ C9lamJjYS9wdWJsaWN3ZWIvd2ViZGlzdC9jZXJ0ZGlzdD9jbWQ9Y3JsJmlzc3Vlcj1DTj1DVlVU
+ Q0EsTz1DVlVULEM9Q1owDQYJKoZIhvcNAQEFBQADggEBACiFabi16IihPfk2WexiKhZy+XsGdpJ
+ 0Ut1SxWGFxIKzckHjaMc2sW8rY3sAVBVVb7AhePFuewQBZzNGvVJfbLtn62x+nt+ZH4S2xKt9Po
+ 9f7YU3kolJutJDi7u7KfKAnyHfVvZE2Pf1nnW/iNDE9b/fz7i9Y+1qpM0Tq/V3mZMe3/Ck9hWmq
+ YOHzkVHIW2CA/gQUuCMA5ePeeIDcXRgMbzcp5QxiVqL5VH1f0OLpXbEsGt4G1U2Z096p2H3NpgO
+ ZJga8lmNAW1PWGIzBO6PNQzS9ihrFPp7VsVxoG1y6v1oeZlKdLNtvC2KLcDTrwVTZfEDTYs3zj3
+ ezI524xLOqwk=
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+uid: topon@fel.cvut.cz
+
+#!RESULT ERROR
+#!CONNECTION ldap://localhost:10389
+#!DATE 2010-12-28T14:15:16.949
+#!ERROR [LDAP: error code 32 - NO_SUCH_OBJECT: failed for     Add Request : ClientEntry     dn: CN=toponra,ou=CVUT,dc=in,dc=systinet,dc=com     objectClass: top     objectClass: person     objectClass: organizationalPerson     objectClass: inetOrgPerson     sn: toponra     ou: CVUT     cn: toponra     userCertificate;binary: '0x30 0x82 0x03 0xB1 0x30 0x82 0x02 0x99 0xA0 0x03 0x02 0x01 0x02 0x02 0x08 0x72 ...' : ERR_268 Cannot find a partition for CN=toponra,ou=CVUT,dc=in,dc=systinet,dc=com]
+dn: CN=toponra,ou=CVUT,dc=in,dc=systinet,dc=com
+sn: toponra
+ou: CVUT
+cn: toponra
+userCertificate;binary:: MIIDsTCCApmgAwIBAgIIcqFUl0/ptC0wDQYJKoZIhvcNAQEFBQA
+ wLTEPMA0GA1UEAwwGQ1ZVVENBMQ0wCwYDVQQKDARDVlVUMQswCQYDVQQGEwJDWjAeFw0wNzA4MT
+ MxODExNDdaFw0wOTA4MTIxODIxNDdaMHcxEDAOBgNVBAMMB3RvcG9ucmExDTALBgNVBAsMBENWV
+ VQxETAPBgNVBAsMCHJvY25pa18xMRIwEAYKCZImiZPyLGQBGRYCaW4xGDAWBgoJkiaJk/IsZAEZ
+ FghzeXN0aW5ldDETMBEGCgmSJomT8ixkARkWA2NvbTCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYk
+ CgYEAovWvThZPncBR+1auOTfBAvGPSYWbL0iMv+oni0PmXlGqunGmS3uY2fBBPBZ5JNe1Lms1kj
+ FacpAZBu8fBWOoPOFGhEdPNTxb5f/UCZhkAv7gnT7LeY6CxU8pHfvmuNTXvJ4+XWLZ2FyStNJ0M
+ XgZsr5VcQsBzoB0ckSqDaeoRO8CAwEAAaOCAQ0wggEJMAwGA1UdEwEB/wQCMAAwDgYDVR0PAQH/
+ BAQDAgWgMDsGA1UdJQQ0MDIGCCsGAQUFBwMBBggrBgEFBQcDAgYIKwYBBQUHAwQGCCsGAQUFBwM
+ FBggrBgEFBQcDBzAdBgNVHQ4EFgQUkRvLiC0e5uSSohTik7H1UqQQXNgwHwYDVR0jBBgwFoAUQz
+ Ib5dMwmeHGnqvLxC/1alYY64gwbAYDVR0fBGUwYzBhoF+gXYZbaHR0cDovL2xvY2FsaG9zdDo4M
+ DgwL2VqYmNhL3B1YmxpY3dlYi93ZWJkaXN0L2NlcnRkaXN0P2NtZD1jcmwmaXNzdWVyPUNOPUNW
+ VVRDQSxPPUNWVVQsQz1DWjANBgkqhkiG9w0BAQUFAAOCAQEATx9mpY8mQ5nc6lTXJZ9d1ykJDp6
+ vJx5qI/FTjpyUSAabsMHrHB9SIo2zcozwkTCrQo1yn75krZYAWOLbEE0XzkZ9nVuvhbuEm31ZYr
+ mQvuq2a0Kx1J0xR3on61glMORmNLy0CvUf5SPoUjDhJEo+14HjqkTVw+7RkCU1veVYs8dURDpmd
+ EsCYpWIv1b6QheXleuKFuD+3a1gh0uTbnBQjzCOvMW/ysEzZjoVeGChYZkWW2GGMznJuZpuUUAv
+ vfxe24b0gPFg3ZmS4k52A9mPM4p2KAc2rKJHDw2XV2AEUY95eO5RR6H2i9OLIUfKWNVEsp11/0H
+ q5QQhDquyJmolmg==
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+
+#!RESULT ERROR
+#!CONNECTION ldap://localhost:10389
+#!DATE 2010-12-28T14:15:16.963
+#!ERROR [LDAP: error code 32 - NO_SUCH_OBJECT: failed for     Add Request : ClientEntry     dn: CN=anicka,ou=CVUT,dc=in,dc=systinet,dc=com     objectClass: top     objectClass: person     objectClass: organizationalPerson     objectClass: inetOrgPerson     uid: anicka@fel.cvut.cz     sn: anicka     ou: CVUT     cn: anicka     userCertificate;binary: '0x30 0x82 0x03 0xC2 0x30 0x82 0x02 0xAA 0xA0 0x03 0x02 0x01 0x02 0x02 0x08 0x4E ...' : ERR_268 Cannot find a partition for CN=anicka,ou=CVUT,dc=in,dc=systinet,dc=com]
+dn: CN=anicka,ou=CVUT,dc=in,dc=systinet,dc=com
+sn: anicka
+ou: CVUT
+cn: anicka
+userCertificate;binary:: MIIDwjCCAqqgAwIBAgIIToEqjOWtLZkwDQYJKoZIhvcNAQEFBQA
+ wLTEPMA0GA1UEAwwGQ1ZVVENBMQ0wCwYDVQQKDARDVlVUMQswCQYDVQQGEwJDWjAeFw0wNzA4MT
+ QwNjI4MzZaFw0wOTA4MTMwNjM4MzZaMIGHMSIwIAYKCZImiZPyLGQBAQwSYW5pY2thQGZlbC5jd
+ nV0LmN6MQ8wDQYDVQQDDAZhbmlja2ExDTALBgNVBAsMBENWVVQxEjAQBgoJkiaJk/IsZAEZFgJp
+ bjEYMBYGCgmSJomT8ixkARkWCHN5c3RpbmV0MRMwEQYKCZImiZPyLGQBGRYDY29tMIGfMA0GCSq
+ GSIb3DQEBAQUAA4GNADCBiQKBgQClbu8sUQ1KkS0JSPWnvkORMWuwv1dA9r/4LL7JzE6EwmlbL5
+ j8EAVDE7NE4416l9icj18RFZHd3rfHK1rfCZGSX/VwNYm6rftFHhJXeJO4GioHr3waafk7uwkE4
+ 9Y1niaZNhxDr3W0ZaVPnN3h8KW7f0t9zl8HW+T0LZmnyu+LqQIDAQABo4IBDTCCAQkwDAYDVR0T
+ AQH/BAIwADAOBgNVHQ8BAf8EBAMCBaAwOwYDVR0lBDQwMgYIKwYBBQUHAwEGCCsGAQUFBwMCBgg
+ rBgEFBQcDBAYIKwYBBQUHAwUGCCsGAQUFBwMHMB0GA1UdDgQWBBTmDPmHCdByDotfZUlSeO6xcc
+ wntTAfBgNVHSMEGDAWgBRDMhvl0zCZ4caeq8vEL/VqVhjriDBsBgNVHR8EZTBjMGGgX6Bdhltod
+ HRwOi8vbG9jYWxob3N0OjgwODAvZWpiY2EvcHVibGljd2ViL3dlYmRpc3QvY2VydGRpc3Q/Y21k
+ PWNybCZpc3N1ZXI9Q049Q1ZVVENBLE89Q1ZVVCxDPUNaMA0GCSqGSIb3DQEBBQUAA4IBAQAUOsG
+ DvbxJwkQfDeLU9B2/Wn7M7nbJp/1Uat6dKe9EAPbgE5whp8vkJPKlJDYad6X1M8NTjhNAi2BAtm
+ vepsSbGWCFuZbkMQ1WHeWeOsJqrCZS9Qyg/GgrUGqF7V8T8DO0x2xAV1iPSqhPwR674h5hd4qOC
+ Pado2SB43iDFGRVFVojaQbjocKiCd877KElP15g4jaB/+9ipsGOcIPgCfBGoyf5EVEFK7miDU7J
+ ONqfelg77589p0k2mPv+3RrdIeAveSHr8FeYkNEG20vH9GKSExOB+I0pF2kP3hzJjKc9ejRDPam
+ ocxb6OplFhYWerhAEaFCViOL4zySbYf+lv5NW
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+uid: anicka@fel.cvut.cz
+
+#!RESULT ERROR
+#!CONNECTION ldap://localhost:10389
+#!DATE 2010-12-28T14:15:16.972
+#!ERROR [LDAP: error code 32 - NO_SUCH_OBJECT: failed for     Add Request : ClientEntry     dn: CN=cunik,ou=CVUT,dc=in,dc=systinet,dc=com     objectClass: top     objectClass: person     objectClass: organizationalPerson     objectClass: inetOrgPerson     uid: cunik@fel.cvut.cz     sn: cunik     ou: CVUT     cn: cunik     userCertificate;binary: '0x30 0x82 0x03 0xCF 0x30 0x82 0x02 0xB7 0xA0 0x03 0x02 0x01 0x02 0x02 0x08 0x72 ...' : ERR_268 Cannot find a partition for CN=cunik,ou=CVUT,dc=in,dc=systinet,dc=com]
+dn: CN=cunik,ou=CVUT,dc=in,dc=systinet,dc=com
+sn: cunik
+ou: CVUT
+cn: cunik
+userCertificate;binary:: MIIDzzCCAregAwIBAgIIcjtGzWKy0q8wDQYJKoZIhvcNAQEFBQA
+ wLTEPMA0GA1UEAwwGQ1ZVVENBMQ0wCwYDVQQKDARDVlVUMQswCQYDVQQGEwJDWjAeFw0wNzA4MT
+ QxOTU3NDRaFw0wOTA4MTMyMDA3NDRaMIGUMSEwHwYKCZImiZPyLGQBAQwRY3VuaWtAZmVsLmN2d
+ XQuY3oxDjAMBgNVBAMMBWN1bmlrMQ0wCwYDVQQLDARDVlVUMQ0wCwYDVQQLDAQyMDA3MRIwEAYK
+ CZImiZPyLGQBGRYCaW4xGDAWBgoJkiaJk/IsZAEZFghzeXN0aW5ldDETMBEGCgmSJomT8ixkARk
+ WA2NvbTCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAlMCcYTHBLmXq0BypbVDX91SSpO75FH
+ lXrxB7Aw/B2WKomwkrcU5R02XxPk9dLUNdvizEXzFtMRdTZpCE2fz7yCnOryVZqZsY7YGs1MxMF
+ TuVG7OlszcOIoTuzXp8YXK5qZgtsBCZdtGRTE1g4/kwIM0prJUSI04iD7Uzugki3/MCAwEAAaOC
+ AQ0wggEJMAwGA1UdEwEB/wQCMAAwDgYDVR0PAQH/BAQDAgWgMDsGA1UdJQQ0MDIGCCsGAQUFBwM
+ BBggrBgEFBQcDAgYIKwYBBQUHAwQGCCsGAQUFBwMFBggrBgEFBQcDBzAdBgNVHQ4EFgQUBltfss
+ IEqzEhzZrcYRC0ltzw2E0wHwYDVR0jBBgwFoAUQzIb5dMwmeHGnqvLxC/1alYY64gwbAYDVR0fB
+ GUwYzBhoF+gXYZbaHR0cDovL2xvY2FsaG9zdDo4MDgwL2VqYmNhL3B1YmxpY3dlYi93ZWJkaXN0
+ L2NlcnRkaXN0P2NtZD1jcmwmaXNzdWVyPUNOPUNWVVRDQSxPPUNWVVQsQz1DWjANBgkqhkiG9w0
+ BAQUFAAOCAQEAA3iUQseIpljkLYnMbV1VtnDQfY8CF0hjsy9z+Rfx4SQmzMYbcuXFjZBRA1WDhP
+ PwR1lUYyILfdqRBI/rwXWjqGywTHOaqJTD8EdYAadNcG7LXgOXJlxiZ9ht0Ux6zd+A5hnyU5k+U
+ aHRvxBnm/3f0AeWfkWbPWXjt+LkkQFNbX9cgvRxrZUsD9RxDrn1zSWcbRrMYHCgccdd4GEsqrsd
+ E74Vxn3kHrExLHjgCVm3dZ2mWZ0nTtzp0OcVGGJJsrEdueb3ps8hHwVWAo1OQjTLm22xM7ogwu3
+ uK4vDqThGK8To9Qb2m3rOVh+KT3goiPs4thT5KhXxU+epNXfT7sjy5Q==
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+uid: cunik@fel.cvut.cz
+
+#!RESULT ERROR
+#!CONNECTION ldap://localhost:10389
+#!DATE 2010-12-28T14:15:16.990
+#!ERROR [LDAP: error code 32 - NO_SUCH_OBJECT: failed for     Add Request : ClientEntry     dn: CN=pavel,ou=CVUT,dc=in,dc=systinet,dc=com     objectClass: top     objectClass: person     objectClass: organizationalPerson     objectClass: inetOrgPerson     uid: pavel@fel.cvut.cz     sn: pavel     ou: CVUT     cn: pavel     userCertificate;binary: '0x30 0x82 0x03 0xCF 0x30 0x82 0x02 0xB7 0xA0 0x03 0x02 0x01 0x02 0x02 0x08 0x3B ...' : ERR_268 Cannot find a partition for CN=pavel,ou=CVUT,dc=in,dc=systinet,dc=com]
+dn: CN=pavel,ou=CVUT,dc=in,dc=systinet,dc=com
+sn: pavel
+ou: CVUT
+cn: pavel
+userCertificate;binary:: MIIDzzCCAregAwIBAgIIO1ANjMrNJ70wDQYJKoZIhvcNAQEFBQA
+ wLTEPMA0GA1UEAwwGQ1ZVVENBMQ0wCwYDVQQKDARDVlVUMQswCQYDVQQGEwJDWjAeFw0wNzA4MT
+ UyMTU0MjFaFw0wOTA4MTQyMjA0MjFaMIGUMSEwHwYKCZImiZPyLGQBAQwRcGF2ZWxAZmVsLmN2d
+ XQuY3oxDjAMBgNVBAMMBXBhdmVsMQ0wCwYDVQQLDARDVlVUMQ0wCwYDVQQLDAQyMDA3MRIwEAYK
+ CZImiZPyLGQBGRYCaW4xGDAWBgoJkiaJk/IsZAEZFghzeXN0aW5ldDETMBEGCgmSJomT8ixkARk
+ WA2NvbTCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAuKLUuUDuOVhhlVt/j7U+eq+Lar0fjD
+ LdPA2rAg1vCqaKIpSoS74OPoLfIlAr9/WanYEU7i6aiFMpzk5zVeNCFq0R2gxfffOQqjL8z7cvs
+ yVMKTf+cThYLrKGxqScQB+dnJxpNYPTLR95K153L+fNDiBEHJyS4s4fWwjCDNW0ZKECAwEAAaOC
+ AQ0wggEJMAwGA1UdEwEB/wQCMAAwDgYDVR0PAQH/BAQDAgWgMDsGA1UdJQQ0MDIGCCsGAQUFBwM
+ BBggrBgEFBQcDAgYIKwYBBQUHAwQGCCsGAQUFBwMFBggrBgEFBQcDBzAdBgNVHQ4EFgQUq0J85f
+ QHJvRmDnUP3fxrdJWMdSwwHwYDVR0jBBgwFoAUQzIb5dMwmeHGnqvLxC/1alYY64gwbAYDVR0fB
+ GUwYzBhoF+gXYZbaHR0cDovL2xvY2FsaG9zdDo4MDgwL2VqYmNhL3B1YmxpY3dlYi93ZWJkaXN0
+ L2NlcnRkaXN0P2NtZD1jcmwmaXNzdWVyPUNOPUNWVVRDQSxPPUNWVVQsQz1DWjANBgkqhkiG9w0
+ BAQUFAAOCAQEANTTdGhj4vZosZ8xCQIh3D8loXzNEI1s+sr+biNDsXEZyKXJxxDUBcPh8NrQ030
+ Exx8xbTFwb4WgO4k22jkN0tESBu8LWmxHWRr/7noPorp4OCyjds9jFFqwGLxdpmphy10V1e5/bX
+ ZKMDYdrtCuLJf07yi+4OEVYcC8ZmziHsGS5EF5nWrhwfijPErUP2laBzghiXq7CO2Ur4hGRiN/j
+ 2dqfm/ik8uPm9xTgi2Affjf+bDSGWd/tNXvGI5kNLPS1HKqvaeDx4Ho+Ro9Lf/iAn6QHue0YCht
+ toffibyNQKUWn2a4L0Dl5z4c/1UuhPpQdUX79KfhuadYP+AQ0qNGDOg==
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+uid: pavel@fel.cvut.cz
+
+#!RESULT ERROR
+#!CONNECTION ldap://localhost:10389
+#!DATE 2010-12-28T14:15:16.998
+#!ERROR [LDAP: error code 32 - NO_SUCH_OBJECT: failed for     Add Request : ClientEntry     dn: CN=jirka revoked,ou=CVUT,dc=in,dc=systinet,dc=com     objectClass: top     objectClass: person     objectClass: organizationalPerson     objectClass: inetOrgPerson     uid: jirkarevoked@fel.cvut.cz     sn: revoked     ou: CVUT     cn: jirka revoked     givenName: jirka : ERR_268 Cannot find a partition for CN=jirka revoked,ou=CVUT,dc=in,dc=systinet,dc=com]
+dn: CN=jirka revoked,ou=CVUT,dc=in,dc=systinet,dc=com
+sn: revoked
+ou: CVUT
+cn: jirka revoked
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+givenName: jirka
+uid: jirkarevoked@fel.cvut.cz
+

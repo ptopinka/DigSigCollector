@@ -1,0 +1,28 @@
+8
+
+dir
+24
+http://b140/xmlsignatures/trunk/components/signatures/org/topon/signatures/apache
+http://b140/xmlsignatures
+
+
+
+2007-07-25T11:16:40.944526Z
+2
+topon
+
+
+svn:special svn:externals svn:needs-lock
+
+DetachedXMLSignatureApache.java
+file
+48
+
+
+
+2007-08-05T12:13:23.187500Z
+3c70c83ad6507c49b32bc94124420196
+2007-08-06T07:00:33.275107Z
+48
+topon
+

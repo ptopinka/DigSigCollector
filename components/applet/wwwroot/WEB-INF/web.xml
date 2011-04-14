@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
+
+<web-app>
+
+    <servlet>
+        <servlet-name>action</servlet-name>
+        <servlet-class>org.apache.struts.action.ActionServlet</servlet-class>
+        <init-param>
+            <param-name>config</param-name>
+            <param-value>/WEB-INF/struts-config.xml</param-value>
+        </init-param>
+        <load-on-startup>2</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>action</servlet-name>
+        <url-pattern>*.do</url-pattern>
+    </servlet-mapping>
+
+    <welcome-file-list>
+        <welcome-file>/index.html</welcome-file>
+    </welcome-file-list>
+
+
+  <!--
+   <security-constraint>                                                                                                                                       
+     <web-resource-collection>                                                                                                                                 
+       <web-resource-name>dsigcollector</web-resource-name>                                                                                                      
+       <description>An example security config that only allows users with the                                                                                 
+         role JBossAdmin to access the HTML JMX console web application                                                                                        
+       </description>                                                                                                                                          
+       <url-pattern>/index.jsp</url-pattern>                                                                                                                           
+       <http-method>GET</http-method>                                                                                                                          
+       <http-method>POST</http-method>                                                                                                                         
+     </web-resource-collection>                                                                                                                                
+     <auth-constraint>                                                                                                                                         
+       <role-name>WebAppUser</role-name>                                                                                                                       
+     </auth-constraint>                                                                                                                                        
+ 
+   </security-constraint>                                                                                                                                      
+                                                                                                                                                               
+                                                                                                                                                               
+   <login-config>                                                                                                                                              
+      <auth-method>BASIC</auth-method>                                                                                                                         
+      <realm-name>JBoss JMX Console</realm-name>                                                                                                               
+   </login-config>                                                                                                                                             
+-->                                                                                                                                                              
+   <security-role>                                                                                                                                             
+      <role-name>JBossAdmin</role-name>                                                                                                                        
+   </security-role>               
+     <security-role>
+          <role-name>WebAppUser</role-name>
+     </security-role> 
+
+
+
+
+  <security-constraint> 
+    <web-resource-collection>
+     <web-resource-name>A Protected Page</web-resource-name>
+     <url-pattern>/*</url-pattern>
+   </web-resource-collection>
+
+   <auth-constraint>
+     <role-name>WebAppUser</role-name>
+   </auth-constraint>
+  </security-constraint> 
+
+  <login-config>
+   <auth-method>FORM</auth-method>
+   <form-login-config> 
+     <form-login-page>/login.jsp</form-login-page>
+     <form-error-page>/error.jsp</form-error-page>
+   </form-login-config> 
+  </login-config>
+ 
+ 
+ <!--
+     <security-constraint>
+          <web-resource-collection>
+               <web-resource-name>dsigcollector</web-resource-name>
+               <description>Protects all resources</description>
+               <url-pattern>/*</url-pattern>
+               <http-method>GET</http-method>                                                                                                                          
+       		   <http-method>POST</http-method>     
+          </web-resource-collection>
+          <auth-constraint>
+               <role-name>WebAppUser</role-name>
+          </auth-constraint>
+     </security-constraint>
+   
+     <security-role>
+          <role-name>WebAppUser</role-name>
+     </security-role>
+      
+     <login-config>
+          <auth-method>BASIC</auth-method>
+          <realm-name>Test Realm</realm-name>
+     </login-config>
+-->
+
+
+
+   <servlet>
+      <servlet-name>SignatureStore</servlet-name>
+      <display-name>Signature Store</display-name>
+     <servlet-class>org.topon.signatures.servlet.SignatureStore</servlet-class>
+
+      <load-on-startup>1</load-on-startup>
+   </servlet>
+
+   <servlet-mapping>
+      <servlet-name>SignatureStore</servlet-name>
+      <url-pattern>/SignatureStore</url-pattern>
+   </servlet-mapping>
+
+  <servlet>
+      <servlet-name>DocumentsStore</servlet-name>
+      <display-name>Documents Store</display-name>
+     <servlet-class>org.topon.signatures.servlet.DocumentsStore</servlet-class>
+
+      <load-on-startup>1</load-on-startup>
+   </servlet>
+
+   <servlet-mapping>
+      <servlet-name>DocumentsStore</servlet-name>
+      <url-pattern>/DocumentsStore</url-pattern>
+   </servlet-mapping>
+
+  <servlet>
+      <servlet-name>CA</servlet-name>
+      <display-name>Certification Authority</display-name>
+     <servlet-class>org.topon.signatures.servlet.CA</servlet-class>
+
+      <load-on-startup>1</load-on-startup>
+   </servlet>
+
+   <servlet-mapping>
+      <servlet-name>CA</servlet-name>
+      <url-pattern>/CA</url-pattern>
+   </servlet-mapping>
+
+
+
+   <session-config>
+      <session-timeout>0</session-timeout>
+   </session-config>
+
+
+
+</web-app>

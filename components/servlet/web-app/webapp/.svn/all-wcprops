@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/xmlsignatures/!svn/ver/28/trunk/components/servlet/web-app/webapp
+END
+signatures.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/xmlsignatures/!svn/ver/79/trunk/components/servlet/web-app/webapp/signatures.jsp
+END
+editDocument.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/xmlsignatures/!svn/ver/45/trunk/components/servlet/web-app/webapp/editDocument.jsp
+END
+certaut.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/xmlsignatures/!svn/ver/64/trunk/components/servlet/web-app/webapp/certaut.jsp
+END
+foot.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/xmlsignatures/!svn/ver/37/trunk/components/servlet/web-app/webapp/foot.jsp
+END
+documents.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/xmlsignatures/!svn/ver/45/trunk/components/servlet/web-app/webapp/documents.jsp
+END
+head.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/xmlsignatures/!svn/ver/66/trunk/components/servlet/web-app/webapp/head.jsp
+END

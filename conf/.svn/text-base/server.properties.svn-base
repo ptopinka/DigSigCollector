@@ -1,0 +1,12 @@
+database.type=mysql
+database.host=localhost
+database.port=3306
+database.name=xmlsignatures
+database.user=root
+database.password=noname
+
+ldap.provider.url=ldap://topon:64441
+ldap.admin.user=uid\=topon,ou\=topon,dc\=in,dc\=systinet,dc\=com
+ldap.admin.password=changeit
+ldap.search.base.group=ou\=CVUT,dc\=in,dc\=systinet,dc\=com
+ldap.searchfilter.user=objectClass\=Person

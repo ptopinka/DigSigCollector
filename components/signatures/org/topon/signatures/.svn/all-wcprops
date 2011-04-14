@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/xmlsignatures/!svn/ver/23/trunk/components/signatures/org/topon/signatures
+END
+X509KeySelector.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/xmlsignatures/!svn/ver/2/trunk/components/signatures/org/topon/signatures/X509KeySelector.java
+END
+XMLSignatureHelper.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/xmlsignatures/!svn/ver/67/trunk/components/signatures/org/topon/signatures/XMLSignatureHelper.java
+END

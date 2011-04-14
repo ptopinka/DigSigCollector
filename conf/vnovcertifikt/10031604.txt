@@ -1,0 +1,97 @@
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number: 10031604 (0x9911f4)
+        Signature Algorithm: sha256WithRSAEncryption
+        Issuer: C=CZ, CN=I.CA \E2\80\93 Test Qualified Certification Authority, 01/2010, O=První certifikaèní autorita, a.s., OU=I.CA - Accredited Provider of Certification Services
+        Validity
+            Not Before: Nov 10 14:10:42 2010 GMT
+            Not After : Dec 10 14:10:42 2010 GMT
+        Subject: C=CZ, CN=Pavel Topinka, O=Pavel Topinka, emailAddress=ptopinka@gmail.com, serialNumber=ICA - 10006561
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                Public-Key: (2048 bit)
+                Modulus:
+                    00:c5:9a:cf:f6:ae:d9:30:22:75:29:1b:4b:cb:4f:
+                    42:7c:63:39:cf:4f:a6:f2:32:7f:6e:f3:50:91:a1:
+                    ab:fc:3c:9e:fc:68:5a:c0:f0:c5:a0:95:42:fd:af:
+                    7f:92:c9:6b:6d:0d:a3:d0:86:62:8e:1a:c3:0e:74:
+                    8e:13:a6:96:98:6e:5c:7d:19:cc:d5:60:f4:4d:99:
+                    b5:a2:d2:f6:da:80:5a:11:46:88:0f:f6:3d:61:cd:
+                    2c:bd:33:3b:85:b8:e7:51:53:1c:1f:c8:df:a8:98:
+                    60:b6:cb:99:43:ce:50:d9:df:5a:37:ef:8f:5f:58:
+                    86:d2:fe:44:a5:4f:f1:21:54:8e:5f:72:7a:2c:c6:
+                    35:4d:80:1c:86:c3:3b:b6:66:82:31:f0:24:ee:0c:
+                    24:a3:e1:97:96:17:01:7d:81:26:db:fb:34:27:89:
+                    ec:ef:a1:1f:85:e6:86:14:2a:8a:37:ed:a2:d2:ed:
+                    a3:19:51:e0:a0:ba:4e:99:4f:f9:68:ad:e8:41:7d:
+                    2f:f5:7d:39:57:a5:75:e0:ba:8b:a3:59:6d:1e:ef:
+                    b7:6f:ad:db:a9:a0:cf:89:7e:7c:5a:ab:98:2d:ab:
+                    8e:05:28:a0:a8:b6:1a:2f:d2:4d:88:6c:17:18:eb:
+                    cb:5e:33:3f:80:c0:12:4c:12:4a:78:b8:40:8d:f8:
+                    d7:ff
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Key Usage: critical
+                Digital Signature, Non Repudiation
+            X509v3 Authority Key Identifier: 
+                keyid:F2:58:10:D8:D2:F9:F9:54:06:88:C0:B4:07:4F:A1:4E:7F:EA:65:77
+
+            X509v3 Subject Key Identifier: 
+                CD:60:1D:62:5F:5A:84:86:A9:94:DE:39:2C:8B:0A:5F:F0:5B:1B:74
+            X509v3 Certificate Policies: 
+                Policy: 1.3.6.1.4.1.23624.1.104.10.2
+                  User Notice:
+                    Explicit Text: Tento certifikat (QC) je vydan pro testovaci ucely.
+
+            qcStatements: 
+                0.4.0.1862.1.1
+            X509v3 CRL Distribution Points: 
+
+                Full Name:
+                  URI:http://testq.ica.cz/tqica10.crl
+
+    Signature Algorithm: sha256WithRSAEncryption
+        5e:b4:df:1b:ec:03:fb:94:69:cc:a3:1c:9c:ac:e5:b9:6a:75:
+        89:9b:dc:f5:84:98:db:33:76:e8:44:bc:40:eb:30:f0:f1:f9:
+        41:8b:1c:4b:06:ac:61:1a:85:f3:b4:26:4f:37:3e:1e:3c:a9:
+        3c:ba:f4:47:fd:0d:ca:1c:42:7d:2f:f4:66:e1:91:86:b1:52:
+        5f:d0:da:55:eb:69:05:2a:aa:0d:b6:cc:81:e2:45:94:7b:1d:
+        aa:3f:11:26:0d:9d:72:20:60:8b:61:5a:67:46:2b:1e:59:f1:
+        08:c9:77:d2:8e:bf:82:9e:c4:87:92:c8:aa:31:f5:ee:16:97:
+        89:93:60:74:dd:c2:b8:be:af:cd:17:5c:85:7a:6b:82:11:fc:
+        73:87:e2:7f:1f:32:e5:6c:d2:81:a3:f8:be:da:74:88:f9:8b:
+        2b:ad:87:62:bb:8a:a9:8a:8d:f8:49:43:bd:fd:5c:c5:84:bb:
+        06:8f:4d:f4:c8:a0:48:ee:8f:4c:67:f0:6b:e7:f1:7f:7e:64:
+        bf:e4:17:b4:45:5c:73:6e:e0:fd:d2:90:49:21:f4:0d:a2:ae:
+        e2:61:6c:3a:dd:63:cd:4b:c5:cc:72:19:e1:8e:22:4f:55:8d:
+        32:40:0d:52:58:c2:53:9d:fa:a4:cb:8d:4b:ed:c7:3a:31:b9:
+        bf:3d:d8:bb
+-----BEGIN CERTIFICATE-----
+MIIEtjCCA56gAwIBAgIEAJkR9DANBgkqhkiG9w0BAQsFADCBvjELMAkGA1UEBhMC
+Q1oxQTA/BgNVBAMMOEkuQ0Eg4oCTIFRlc3QgUXVhbGlmaWVkIENlcnRpZmljYXRp
+b24gQXV0aG9yaXR5LCAwMS8yMDEwMS0wKwYDVQQKDCRQcnZuw60gY2VydGlmaWth
+xI1uw60gYXV0b3JpdGEsIGEucy4xPTA7BgNVBAsMNEkuQ0EgLSBBY2NyZWRpdGVk
+IFByb3ZpZGVyIG9mIENlcnRpZmljYXRpb24gU2VydmljZXMwHhcNMTAxMTEwMTQx
+MDQyWhcNMTAxMjEwMTQxMDQyWjB5MQswCQYDVQQGEwJDWjEWMBQGA1UEAwwNUGF2
+ZWwgVG9waW5rYTEWMBQGA1UECgwNUGF2ZWwgVG9waW5rYTEhMB8GCSqGSIb3DQEJ
+ARYScHRvcGlua2FAZ21haWwuY29tMRcwFQYDVQQFEw5JQ0EgLSAxMDAwNjU2MTCC
+ASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMWaz/au2TAidSkbS8tPQnxj
+Oc9PpvIyf27zUJGhq/w8nvxoWsDwxaCVQv2vf5LJa20No9CGYo4aww50jhOmlphu
+XH0ZzNVg9E2ZtaLS9tqAWhFGiA/2PWHNLL0zO4W451FTHB/I36iYYLbLmUPOUNnf
+Wjfvj19YhtL+RKVP8SFUjl9yeizGNU2AHIbDO7ZmgjHwJO4MJKPhl5YXAX2BJtv7
+NCeJ7O+hH4XmhhQqijftotLtoxlR4KC6TplP+Wit6EF9L/V9OVeldeC6i6NZbR7v
+t2+t26mgz4l+fFqrmC2rjgUooKi2Gi/STYhsFxjry14zP4DAEkwSSni4QI341/8C
+AwEAAaOB/zCB/DAOBgNVHQ8BAf8EBAMCBsAwHwYDVR0jBBgwFoAU8lgQ2NL5+VQG
+iMC0B0+hTn/qZXcwHQYDVR0OBBYEFM1gHWJfWoSGqZTeOSyLCl/wWxt0MF4GA1Ud
+IARXMFUwUwYMKwYBBAGBuEgBaAoCMEMwQQYIKwYBBQUHAgIwNRozVGVudG8gY2Vy
+dGlmaWthdCAoUUMpIGplIHZ5ZGFuIHBybyB0ZXN0b3ZhY2kgdWNlbHkuMBgGCCsG
+AQUFBwEDBAwwCjAIBgYEAI5GAQEwMAYDVR0fBCkwJzAloCOgIYYfaHR0cDovL3Rl
+c3RxLmljYS5jei90cWljYTEwLmNybDANBgkqhkiG9w0BAQsFAAOCAQEAXrTfG+wD
++5RpzKMcnKzluWp1iZvc9YSY2zN26ES8QOsw8PH5QYscSwasYRqF87QmTzc+Hjyp
+PLr0R/0NyhxCfS/0ZuGRhrFSX9DaVetpBSqqDbbMgeJFlHsdqj8RJg2dciBgi2Fa
+Z0YrHlnxCMl30o6/gp7Eh5LIqjH17haXiZNgdN3CuL6vzRdchXprghH8c4fifx8y
+5WzSgaP4vtp0iPmLK62HYruKqYqN+ElDvf1cxYS7Bo9N9MigSO6PTGfwa+fxf35k
+v+QXtEVcc27g/dKQSSH0DaKu4mFsOt1jzUvFzHIZ4Y4iT1WNMkANUljCU536pMuN
+S+3HOjG5vz3Yuw==
+-----END CERTIFICATE-----

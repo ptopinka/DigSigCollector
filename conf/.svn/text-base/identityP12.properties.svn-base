@@ -1,0 +1,9 @@
+user.keystore=C:/temp/KBcertifikat/TOPINKA_PAVEL_certifikatKB.p12
+keystore.type=P12
+keystore.password=pA29^ eV28^
+keystore.alias=topinka pavel
+
+
+
+server.url.signatures.store=http://localhost:8080/signatures/SignatureStore
+server.url.documents.store=http://localhost:8080/signatures/DocumentsStore

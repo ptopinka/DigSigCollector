@@ -1,0 +1,253 @@
+# 	This file was generated on 2007-08-22 at 09:59:34
+# 	from the ldap://localhost:64441 (bound as uid=topon,ou=topon,dc=in,dc=systinet,dc=com)
+# 	by Softerra LDAP Administrator v3 [ http://www.ldapadministrator.com ]
+dn: dc=in,dc=systinet,dc=com
+dc: in
+objectClass: top
+objectClass: domain
+
+dn: cn=Directory Administrators, dc=in,dc=systinet,dc=com
+objectClass: top
+objectClass: groupofuniquenames
+cn: Directory Administrators
+uniqueMember: uid=topon,ou=topon,dc=in,dc=systinet,dc=com
+
+dn: ou=Groups, dc=in,dc=systinet,dc=com
+objectClass: top
+objectClass: organizationalunit
+ou: Groups
+
+dn: ou=People, dc=in,dc=systinet,dc=com
+objectClass: top
+objectClass: organizationalunit
+ou: People
+
+dn: ou=Special Users,dc=in,dc=systinet,dc=com
+objectClass: top
+objectClass: organizationalUnit
+ou: Special Users
+description: Special Administrative Accounts
+
+dn: cn=Accounting Managers,ou=groups,dc=in,dc=systinet,dc=com
+objectClass: top
+objectClass: groupOfUniqueNames
+cn: Accounting Managers
+ou: groups
+description: People who can manage accounting entries
+
+dn: cn=HR Managers,ou=groups,dc=in,dc=systinet,dc=com
+objectClass: top
+objectClass: groupOfUniqueNames
+cn: HR Managers
+ou: groups
+description: People who can manage HR entries
+
+dn: cn=QA Managers,ou=groups,dc=in,dc=systinet,dc=com
+objectClass: top
+objectClass: groupOfUniqueNames
+cn: QA Managers
+ou: groups
+description: People who can manage QA entries
+
+dn: cn=PD Managers,ou=groups,dc=in,dc=systinet,dc=com
+objectClass: top
+objectClass: groupOfUniqueNames
+cn: PD Managers
+ou: groups
+description: People who can manage engineer entries
+
+dn: ou=topon,dc=in,dc=systinet,dc=com
+telephoneNumber: 777 33 10 80						
+ou: topon
+description: Bakalarska prace Sber Digitalnich podpisu
+objectClass: top
+objectClass: organizationalunit
+
+dn: uid=topon,ou=topon,dc=in,dc=systinet,dc=com
+telephoneNumber: 777331080
+mail: topon@seznam.cz
+uid: topon
+givenName: topon
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetorgperson
+sn: topon
+userPassword: {SSHA}m4ILM76LoHP6RFUEQeNzqgufKqz0efc6bR8maA==
+cn: topon
+
+dn: cn=lojza,ou=People,dc=in,dc=systinet,dc=com
+sn: lojza
+cn: lojza
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: top
+userCertificate:: MIIDOjCCAqOgAwIBAgIQepwLFOALU9+UK+gAYo34yjANBgkqhkiG9w0BAQUFADBVMQswCQYDVQQG
+ EwJaQTElMCMGA1UEChMcVGhhd3RlIENvbnN1bHRpbmcgKFB0eSkgTHRkLjEfMB0GA1UEAxMWVGhh
+ d3RlIENvZGUgU2lnbmluZyBDQTAeFw0wNzAxMDgwMDAwMDBaFw0wODAxMDgyMzU5NTlaMIGGMQsw
+ CQYDVQQGEwJDWjEXMBUGA1UECBMOQ3plY2ggUmVwdWJsaWMxDzANBgNVBAcTBlByYWd1ZTEWMBQG
+ A1UEChMNQVpVQ0hBIHMuci5vLjEdMBsGA1UECxMUU29mdHdhcmUgRGV2ZWxvcG1lbnQxFjAUBgNV
+ BAMTDUFaVUNIQSBzLnIuby4wgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAOHNGEZ/hE0du4q6
+ /Db3RNzUveHEGird8Heroioqnj/c99AujE1grk7h1gVvDFbEziU0P5381TazJZPq2/H1itmpQC1U
+ jhLCo62tbVUSEGPeqxjX5dDHbpjRCDenozMNxTp8CwplnKWTIFY6KB5BkHg/SltoGq8JbMS5JSCN
+ +kCNAgMBAAGjgdgwgdUwDAYDVR0TAQH/BAIwADA+BgNVHR8ENzA1MDOgMaAvhi1odHRwOi8vY3Js
+ LnRoYXd0ZS5jb20vVGhhd3RlQ29kZVNpZ25pbmdDQS5jcmwwHwYDVR0lBBgwFgYIKwYBBQUHAwMG
+ CisGAQQBgjcCARYwHQYDVR0EBBYwFDAOMAwGCisGAQQBgjcCARYDAgeAMDIGCCsGAQUFBwEBBCYw
+ JDAiBggrBgEFBQcwAYYWaHR0cDovL29jc3AudGhhd3RlLmNvbTARBglghkgBhvhCAQEEBAMCBBAw
+ DQYJKoZIhvcNAQEFBQADgYEAa/5CizJJSrNOTzbghobaYg77omFfzbch6iXX216xf6Mtwwz3sxj+
+ +q4ZXN2h2OBAw8hXLMr+hNVc8TAtz4ZCjcKYIM1FQddizGveYVTZnqlXSp7FQ/iQl/kuRfftuSDS
+ ssRfEnx8JfoeJ0zHjbZ1eFiWELVlJtYbeEvGKSBbTC4=
+
+dn: ou=CVUT,dc=in,dc=systinet,dc=com
+ou: CVUT
+objectClass: organizationalUnit
+objectClass: top
+
+dn: CN=topon,ou=CVUT,dc=in,dc=systinet,dc=com
+sn: topon
+ou: CVUT
+cn: topon
+userCertificate;binary:: MIIDrzCCApegAwIBAgIIHSsyJwiZJ3wwDQYJKoZIhvcNAQEFBQAwLTEPMA0GA1UEAwwGQ1ZVVENB
+ MQ0wCwYDVQQKDARDVlVUMQswCQYDVQQGEwJDWjAeFw0wNzA4MTMxNzUzNDRaFw0wOTA4MTIxODAz
+ NDRaMHUxDjAMBgNVBAMMBXRvcG9uMQ0wCwYDVQQLDARDVlVUMREwDwYDVQQLDAhyb2NuaWtfMTES
+ MBAGCgmSJomT8ixkARkWAmluMRgwFgYKCZImiZPyLGQBGRYIc3lzdGluZXQxEzARBgoJkiaJk/Is
+ ZAEZFgNjb20wgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAIqCYfoFtfG85/NPtF+JnBgtFXll
+ 1BN8McJmkEUrG1Dedydr6sqnGV7rCyWOVX8Nr16CIEx+57N6HYq6W0QdUVFE8YjjzREGT/Fy+gfT
+ eXtVOCvukEG1iW9yB/4RR0Lp+Bjx4EuF1pCY2Fa3Kq3GuyqszX8F23jiFAzXSgCVxxoZAgMBAAGj
+ ggENMIIBCTAMBgNVHRMBAf8EAjAAMA4GA1UdDwEB/wQEAwIFoDA7BgNVHSUENDAyBggrBgEFBQcD
+ AQYIKwYBBQUHAwIGCCsGAQUFBwMEBggrBgEFBQcDBQYIKwYBBQUHAwcwHQYDVR0OBBYEFKG4+pJf
+ hHlwYi1lC7t7xsn2PnduMB8GA1UdIwQYMBaAFEMyG+XTMJnhxp6ry8Qv9WpWGOuIMGwGA1UdHwRl
+ MGMwYaBfoF2GW2h0dHA6Ly9sb2NhbGhvc3Q6ODA4MC9lamJjYS9wdWJsaWN3ZWIvd2ViZGlzdC9j
+ ZXJ0ZGlzdD9jbWQ9Y3JsJmlzc3Vlcj1DTj1DVlVUQ0EsTz1DVlVULEM9Q1owDQYJKoZIhvcNAQEF
+ BQADggEBACiFabi16IihPfk2WexiKhZy+XsGdpJ0Ut1SxWGFxIKzckHjaMc2sW8rY3sAVBVVb7Ah
+ ePFuewQBZzNGvVJfbLtn62x+nt+ZH4S2xKt9Po9f7YU3kolJutJDi7u7KfKAnyHfVvZE2Pf1nnW/
+ iNDE9b/fz7i9Y+1qpM0Tq/V3mZMe3/Ck9hWmqYOHzkVHIW2CA/gQUuCMA5ePeeIDcXRgMbzcp5Qx
+ iVqL5VH1f0OLpXbEsGt4G1U2Z096p2H3NpgOZJga8lmNAW1PWGIzBO6PNQzS9ihrFPp7VsVxoG1y
+ 6v1oeZlKdLNtvC2KLcDTrwVTZfEDTYs3zj3ezI524xLOqwk=
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+uid: topon@fel.cvut.cz
+
+dn: CN=toponra,ou=CVUT,dc=in,dc=systinet,dc=com
+sn: toponra
+ou: CVUT
+cn: toponra
+userCertificate;binary:: MIIDsTCCApmgAwIBAgIIcqFUl0/ptC0wDQYJKoZIhvcNAQEFBQAwLTEPMA0GA1UEAwwGQ1ZVVENB
+ MQ0wCwYDVQQKDARDVlVUMQswCQYDVQQGEwJDWjAeFw0wNzA4MTMxODExNDdaFw0wOTA4MTIxODIx
+ NDdaMHcxEDAOBgNVBAMMB3RvcG9ucmExDTALBgNVBAsMBENWVVQxETAPBgNVBAsMCHJvY25pa18x
+ MRIwEAYKCZImiZPyLGQBGRYCaW4xGDAWBgoJkiaJk/IsZAEZFghzeXN0aW5ldDETMBEGCgmSJomT
+ 8ixkARkWA2NvbTCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAovWvThZPncBR+1auOTfBAvGP
+ SYWbL0iMv+oni0PmXlGqunGmS3uY2fBBPBZ5JNe1Lms1kjFacpAZBu8fBWOoPOFGhEdPNTxb5f/U
+ CZhkAv7gnT7LeY6CxU8pHfvmuNTXvJ4+XWLZ2FyStNJ0MXgZsr5VcQsBzoB0ckSqDaeoRO8CAwEA
+ AaOCAQ0wggEJMAwGA1UdEwEB/wQCMAAwDgYDVR0PAQH/BAQDAgWgMDsGA1UdJQQ0MDIGCCsGAQUF
+ BwMBBggrBgEFBQcDAgYIKwYBBQUHAwQGCCsGAQUFBwMFBggrBgEFBQcDBzAdBgNVHQ4EFgQUkRvL
+ iC0e5uSSohTik7H1UqQQXNgwHwYDVR0jBBgwFoAUQzIb5dMwmeHGnqvLxC/1alYY64gwbAYDVR0f
+ BGUwYzBhoF+gXYZbaHR0cDovL2xvY2FsaG9zdDo4MDgwL2VqYmNhL3B1YmxpY3dlYi93ZWJkaXN0
+ L2NlcnRkaXN0P2NtZD1jcmwmaXNzdWVyPUNOPUNWVVRDQSxPPUNWVVQsQz1DWjANBgkqhkiG9w0B
+ AQUFAAOCAQEATx9mpY8mQ5nc6lTXJZ9d1ykJDp6vJx5qI/FTjpyUSAabsMHrHB9SIo2zcozwkTCr
+ Qo1yn75krZYAWOLbEE0XzkZ9nVuvhbuEm31ZYrmQvuq2a0Kx1J0xR3on61glMORmNLy0CvUf5SPo
+ UjDhJEo+14HjqkTVw+7RkCU1veVYs8dURDpmdEsCYpWIv1b6QheXleuKFuD+3a1gh0uTbnBQjzCO
+ vMW/ysEzZjoVeGChYZkWW2GGMznJuZpuUUAvvfxe24b0gPFg3ZmS4k52A9mPM4p2KAc2rKJHDw2X
+ V2AEUY95eO5RR6H2i9OLIUfKWNVEsp11/0Hq5QQhDquyJmolmg==
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+
+dn: CN=anicka,ou=CVUT,dc=in,dc=systinet,dc=com
+sn: anicka
+ou: CVUT
+cn: anicka
+userCertificate;binary:: MIIDwjCCAqqgAwIBAgIIToEqjOWtLZkwDQYJKoZIhvcNAQEFBQAwLTEPMA0GA1UEAwwGQ1ZVVENB
+ MQ0wCwYDVQQKDARDVlVUMQswCQYDVQQGEwJDWjAeFw0wNzA4MTQwNjI4MzZaFw0wOTA4MTMwNjM4
+ MzZaMIGHMSIwIAYKCZImiZPyLGQBAQwSYW5pY2thQGZlbC5jdnV0LmN6MQ8wDQYDVQQDDAZhbmlj
+ a2ExDTALBgNVBAsMBENWVVQxEjAQBgoJkiaJk/IsZAEZFgJpbjEYMBYGCgmSJomT8ixkARkWCHN5
+ c3RpbmV0MRMwEQYKCZImiZPyLGQBGRYDY29tMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCl
+ bu8sUQ1KkS0JSPWnvkORMWuwv1dA9r/4LL7JzE6EwmlbL5j8EAVDE7NE4416l9icj18RFZHd3rfH
+ K1rfCZGSX/VwNYm6rftFHhJXeJO4GioHr3waafk7uwkE49Y1niaZNhxDr3W0ZaVPnN3h8KW7f0t9
+ zl8HW+T0LZmnyu+LqQIDAQABo4IBDTCCAQkwDAYDVR0TAQH/BAIwADAOBgNVHQ8BAf8EBAMCBaAw
+ OwYDVR0lBDQwMgYIKwYBBQUHAwEGCCsGAQUFBwMCBggrBgEFBQcDBAYIKwYBBQUHAwUGCCsGAQUF
+ BwMHMB0GA1UdDgQWBBTmDPmHCdByDotfZUlSeO6xccwntTAfBgNVHSMEGDAWgBRDMhvl0zCZ4cae
+ q8vEL/VqVhjriDBsBgNVHR8EZTBjMGGgX6BdhltodHRwOi8vbG9jYWxob3N0OjgwODAvZWpiY2Ev
+ cHVibGljd2ViL3dlYmRpc3QvY2VydGRpc3Q/Y21kPWNybCZpc3N1ZXI9Q049Q1ZVVENBLE89Q1ZV
+ VCxDPUNaMA0GCSqGSIb3DQEBBQUAA4IBAQAUOsGDvbxJwkQfDeLU9B2/Wn7M7nbJp/1Uat6dKe9E
+ APbgE5whp8vkJPKlJDYad6X1M8NTjhNAi2BAtmvepsSbGWCFuZbkMQ1WHeWeOsJqrCZS9Qyg/Ggr
+ UGqF7V8T8DO0x2xAV1iPSqhPwR674h5hd4qOCPado2SB43iDFGRVFVojaQbjocKiCd877KElP15g
+ 4jaB/+9ipsGOcIPgCfBGoyf5EVEFK7miDU7JONqfelg77589p0k2mPv+3RrdIeAveSHr8FeYkNEG
+ 20vH9GKSExOB+I0pF2kP3hzJjKc9ejRDPamocxb6OplFhYWerhAEaFCViOL4zySbYf+lv5NW
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+uid: anicka@fel.cvut.cz
+
+dn: CN=cunik,ou=CVUT,dc=in,dc=systinet,dc=com
+sn: cunik
+ou: CVUT
+cn: cunik
+userCertificate;binary:: MIIDzzCCAregAwIBAgIIcjtGzWKy0q8wDQYJKoZIhvcNAQEFBQAwLTEPMA0GA1UEAwwGQ1ZVVENB
+ MQ0wCwYDVQQKDARDVlVUMQswCQYDVQQGEwJDWjAeFw0wNzA4MTQxOTU3NDRaFw0wOTA4MTMyMDA3
+ NDRaMIGUMSEwHwYKCZImiZPyLGQBAQwRY3VuaWtAZmVsLmN2dXQuY3oxDjAMBgNVBAMMBWN1bmlr
+ MQ0wCwYDVQQLDARDVlVUMQ0wCwYDVQQLDAQyMDA3MRIwEAYKCZImiZPyLGQBGRYCaW4xGDAWBgoJ
+ kiaJk/IsZAEZFghzeXN0aW5ldDETMBEGCgmSJomT8ixkARkWA2NvbTCBnzANBgkqhkiG9w0BAQEF
+ AAOBjQAwgYkCgYEAlMCcYTHBLmXq0BypbVDX91SSpO75FHlXrxB7Aw/B2WKomwkrcU5R02XxPk9d
+ LUNdvizEXzFtMRdTZpCE2fz7yCnOryVZqZsY7YGs1MxMFTuVG7OlszcOIoTuzXp8YXK5qZgtsBCZ
+ dtGRTE1g4/kwIM0prJUSI04iD7Uzugki3/MCAwEAAaOCAQ0wggEJMAwGA1UdEwEB/wQCMAAwDgYD
+ VR0PAQH/BAQDAgWgMDsGA1UdJQQ0MDIGCCsGAQUFBwMBBggrBgEFBQcDAgYIKwYBBQUHAwQGCCsG
+ AQUFBwMFBggrBgEFBQcDBzAdBgNVHQ4EFgQUBltfssIEqzEhzZrcYRC0ltzw2E0wHwYDVR0jBBgw
+ FoAUQzIb5dMwmeHGnqvLxC/1alYY64gwbAYDVR0fBGUwYzBhoF+gXYZbaHR0cDovL2xvY2FsaG9z
+ dDo4MDgwL2VqYmNhL3B1YmxpY3dlYi93ZWJkaXN0L2NlcnRkaXN0P2NtZD1jcmwmaXNzdWVyPUNO
+ PUNWVVRDQSxPPUNWVVQsQz1DWjANBgkqhkiG9w0BAQUFAAOCAQEAA3iUQseIpljkLYnMbV1VtnDQ
+ fY8CF0hjsy9z+Rfx4SQmzMYbcuXFjZBRA1WDhPPwR1lUYyILfdqRBI/rwXWjqGywTHOaqJTD8EdY
+ AadNcG7LXgOXJlxiZ9ht0Ux6zd+A5hnyU5k+UaHRvxBnm/3f0AeWfkWbPWXjt+LkkQFNbX9cgvRx
+ rZUsD9RxDrn1zSWcbRrMYHCgccdd4GEsqrsdE74Vxn3kHrExLHjgCVm3dZ2mWZ0nTtzp0OcVGGJJ
+ srEdueb3ps8hHwVWAo1OQjTLm22xM7ogwu3uK4vDqThGK8To9Qb2m3rOVh+KT3goiPs4thT5KhXx
+ U+epNXfT7sjy5Q==
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+uid: cunik@fel.cvut.cz
+
+dn: CN=pavel,ou=CVUT,dc=in,dc=systinet,dc=com
+sn: pavel
+ou: CVUT
+cn: pavel
+userCertificate;binary:: MIIDzzCCAregAwIBAgIIO1ANjMrNJ70wDQYJKoZIhvcNAQEFBQAwLTEPMA0GA1UEAwwGQ1ZVVENB
+ MQ0wCwYDVQQKDARDVlVUMQswCQYDVQQGEwJDWjAeFw0wNzA4MTUyMTU0MjFaFw0wOTA4MTQyMjA0
+ MjFaMIGUMSEwHwYKCZImiZPyLGQBAQwRcGF2ZWxAZmVsLmN2dXQuY3oxDjAMBgNVBAMMBXBhdmVs
+ MQ0wCwYDVQQLDARDVlVUMQ0wCwYDVQQLDAQyMDA3MRIwEAYKCZImiZPyLGQBGRYCaW4xGDAWBgoJ
+ kiaJk/IsZAEZFghzeXN0aW5ldDETMBEGCgmSJomT8ixkARkWA2NvbTCBnzANBgkqhkiG9w0BAQEF
+ AAOBjQAwgYkCgYEAuKLUuUDuOVhhlVt/j7U+eq+Lar0fjDLdPA2rAg1vCqaKIpSoS74OPoLfIlAr
+ 9/WanYEU7i6aiFMpzk5zVeNCFq0R2gxfffOQqjL8z7cvsyVMKTf+cThYLrKGxqScQB+dnJxpNYPT
+ LR95K153L+fNDiBEHJyS4s4fWwjCDNW0ZKECAwEAAaOCAQ0wggEJMAwGA1UdEwEB/wQCMAAwDgYD
+ VR0PAQH/BAQDAgWgMDsGA1UdJQQ0MDIGCCsGAQUFBwMBBggrBgEFBQcDAgYIKwYBBQUHAwQGCCsG
+ AQUFBwMFBggrBgEFBQcDBzAdBgNVHQ4EFgQUq0J85fQHJvRmDnUP3fxrdJWMdSwwHwYDVR0jBBgw
+ FoAUQzIb5dMwmeHGnqvLxC/1alYY64gwbAYDVR0fBGUwYzBhoF+gXYZbaHR0cDovL2xvY2FsaG9z
+ dDo4MDgwL2VqYmNhL3B1YmxpY3dlYi93ZWJkaXN0L2NlcnRkaXN0P2NtZD1jcmwmaXNzdWVyPUNO
+ PUNWVVRDQSxPPUNWVVQsQz1DWjANBgkqhkiG9w0BAQUFAAOCAQEANTTdGhj4vZosZ8xCQIh3D8lo
+ XzNEI1s+sr+biNDsXEZyKXJxxDUBcPh8NrQ030Exx8xbTFwb4WgO4k22jkN0tESBu8LWmxHWRr/7
+ noPorp4OCyjds9jFFqwGLxdpmphy10V1e5/bXZKMDYdrtCuLJf07yi+4OEVYcC8ZmziHsGS5EF5n
+ WrhwfijPErUP2laBzghiXq7CO2Ur4hGRiN/j2dqfm/ik8uPm9xTgi2Affjf+bDSGWd/tNXvGI5kN
+ LPS1HKqvaeDx4Ho+Ro9Lf/iAn6QHue0YChttoffibyNQKUWn2a4L0Dl5z4c/1UuhPpQdUX79Kfhu
+ adYP+AQ0qNGDOg==
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+uid: pavel@fel.cvut.cz
+
+dn: CN=jirka revoked,ou=CVUT,dc=in,dc=systinet,dc=com
+sn: revoked
+ou: CVUT
+cn: jirka revoked
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+givenName: jirka
+uid: jirkarevoked@fel.cvut.cz
+

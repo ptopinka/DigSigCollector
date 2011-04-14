@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/xmlsignatures/!svn/ver/88/trunk/bin
+END
+make.bat
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/xmlsignatures/!svn/ver/88/trunk/bin/make.bat
+END
+run.bat
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/xmlsignatures/!svn/ver/88/trunk/bin/run.bat
+END
+setenv.bat
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/xmlsignatures/!svn/ver/88/trunk/bin/setenv.bat
+END
+install.bat
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/xmlsignatures/!svn/ver/88/trunk/bin/install.bat
+END

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/xmlsignatures/!svn/ver/21/trunk/components/configuration/src/org/topon/configuration
+END
+Configuration.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/xmlsignatures/!svn/ver/20/trunk/components/configuration/src/org/topon/configuration/Configuration.java
+END
+ServerConfigurationProperties.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/xmlsignatures/!svn/ver/50/trunk/components/configuration/src/org/topon/configuration/ServerConfigurationProperties.java
+END
+ServerConfiguration.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/xmlsignatures/!svn/ver/50/trunk/components/configuration/src/org/topon/configuration/ServerConfiguration.java
+END

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/xmlsignatures/!svn/ver/2/trunk/components/servlet/dd/jar
+END
+jboss.xml
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/xmlsignatures/!svn/ver/2/trunk/components/servlet/dd/jar/jboss.xml
+END
+MANIFEST.MF
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/xmlsignatures/!svn/ver/2/trunk/components/servlet/dd/jar/MANIFEST.MF
+END
+ejb-jar.xml
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/xmlsignatures/!svn/ver/2/trunk/components/servlet/dd/jar/ejb-jar.xml
+END

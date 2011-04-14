@@ -1,0 +1,61 @@
+8
+
+dir
+24
+http://b140/xmlsignatures/trunk/components/signatures/org/topon/signatures
+http://b140/xmlsignatures
+
+
+
+2007-07-30T08:13:00.898873Z
+23
+topon
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+75ae8cb2-6f9c-4661-9207-b8c7a6b91d1a
+
+jdk16
+dir
+
+X509KeySelector.java
+file
+
+
+
+
+2007-07-17T16:19:05.265625Z
+1c4b11bbb5016c0546b1407aec2277fe
+2007-07-25T11:16:40.944526Z
+2
+topon
+
+apache
+dir
+
+XMLSignatureHelper.java
+file
+67
+
+
+
+2007-08-14T06:12:38.687500Z
+78168c237c9b8f51edc8336c30784b58
+2007-08-14T06:15:27.293160Z
+67
+topon
+
+interfaces
+dir
+

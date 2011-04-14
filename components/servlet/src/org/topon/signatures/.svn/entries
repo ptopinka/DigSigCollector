@@ -1,0 +1,22 @@
+8
+
+dir
+24
+http://b140/xmlsignatures/trunk/components/servlet/src/org/topon/signatures
+http://b140/xmlsignatures
+
+
+
+2007-07-25T11:16:40.944526Z
+2
+topon
+
+
+svn:special svn:externals svn:needs-lock
+
+jbean
+dir
+
+servlet
+dir
+

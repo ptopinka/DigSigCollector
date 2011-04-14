@@ -1,0 +1,12 @@
+/* Last Modified 24-12-2009 by Menuka Walpitagamage */
+body{width:600px;margin:0 auto;text-align:center;border:0px solid #666; font-family: Verdana, Arial, Helvetica, sans-serif; padding-top:100px;
+background-color: #cfcfcf;}
+#content{padding:5px 0; min-width: 450px; max-width:500px;}
+#innerholder{margin:10px auto; width:90%;}
+#innerholder .a {padding:4px;}
+#innerholder .a, #innerholder .a .sb-inner {padding:30px; height:200px;}
+#loginbutton{background:#999; color:#fff;cursor:pointer;padding:5px 10px;-moz-border-radius:6px;-webkit-border-radius:4px;width:150px;}
+input{border: none;background: white ;width: 288px;font-family:arial, helvetica; font-size:18px; font-weight:none;margin:2px}
+.roundedfield{background:  url(images/rounded.gif) no-repeat left top; height:50px;padding: 4px;text-align:left;}
+#label {padding-bottom:5px; text-align:left;}
+

@@ -1,0 +1,167 @@
+<project xmlns:ivy="antlib:fr.jayasoft.ivy.ant" name="servlet" default="all">
+   
+	<property name="project.dir" value="../.."/>
+	
+	<property name="ivy.install.version" value="1.4.1"/>
+	<property name="ivy.jar.dir" value="c:/work/ivy/ivy"/>
+	<property name="ivy.jar.file" value="${ivy.jar.dir}/ivy.jar"/>
+
+
+	<property name="JBOSS_HOME" value="c:/work/fel/Bakalarka/projekty/jboss-4.0.5.GA"/>
+	<property name="jboss.default.deploy.dir" value="${JBOSS_HOME}/server/default/deploy"/>
+	<property name="dist.dir" value="dist"/>
+	<property name="build.dir" value="build"/>
+	<property name="classdir" value="${project.dir}/${build.dir}/classes"/>
+	
+	<property name="jspdir"  value="web-app"/>
+	<property name="application.name" value="dsigcollector"/>
+	
+	<property name="dist.ear" value="${application.name}.ear"/>
+	<property name="dist.war" value="${application.name}.war"/>
+	<property name="dist.jar" value="${application.name}.jar"/>
+	
+	<property name="jarDir" value="${dist.dir}/jarDir"/>
+	<property name="earDir" value="${dist.dir}/earDir"/>
+	<property name="warDir" value="${dist.dir}/warDir"/>
+	
+	
+	<property name="lib.dir" value="${project.dir}/lib"/>
+	<property name="mysql.driver" 
+		      value="${lib.dir}/jdbc/mysql-connector-java-5.0.6-bin.jar"/>
+	<property name="oracle.driver"
+			  value="${lib.dir}/jdbc/ojdbc14-10_g.jar"/>
+	<property name="deploymentdescription" value="dd"/>
+	
+	<path id="ivy.lib.path">
+  	    <fileset dir="${ivy.jar.dir}" includes="*.jar"/>
+	</path>
+
+    
+    <!--
+    <target name="run" depends="resolve,create_war">
+    </target>
+	-->
+
+	<target name="init">
+		<mkdir dir="${jarDir}/META-INF"/>
+		<mkdir dir="${warDir}/WEB-INF"/>
+		<mkdir dir="${earDir}/META-INF"/>
+	</target>
+	
+	
+	<target name="create_jar" depends="init">
+	    <copy todir="${jarDir}">
+		      <fileset dir="${classdir}"> 
+	      		   <include name="org/topon/signatures/jbean/*.class" /> 
+                   <include name="org/topon/configuration/**/*.class"/>
+		      	   <include name="org/topon/signatures/apache/*.class"/>
+    	      	   <include name="org/topon/signatures/interfaces/*.class"/>
+		      	   <include name="org/topon/signatures/*class"/>
+		      	   <include name="org/topon/database/*.class"/>
+		      </fileset>			  	    			   
+			<fileset dir="${project.dir}" includes="conf/server.properties"/> 
+
+	    </copy>
+
+	    <copy todir="${jarDir}/META-INF">
+		      <fileset dir="${deploymentdescription}/jar/" includes="ejb-jar.xml,jboss.xml" /> 
+	    </copy>
+		
+		<jar destfile="${earDir}/${dist.jar}"
+			 basedir="${jarDir}"
+			 manifest="${deploymentdescription}/jar/MANIFEST.MF"/>
+	</target>
+	
+	<target name="create_war">
+		<copy todir="${warDir}">
+			<fileset dir="${classdir}" includes="**/StocksServlet.class"></fileset>
+			<fileset dir="${classdir}" includes="**/SignatureStore.class"></fileset>
+			<fileset dir="${classdir}" includes="**/DocumentsStore.class"></fileset>
+			<fileset dir="${classdir}" includes="**/CA.class"></fileset>
+			
+		</copy>
+
+		<!-- JSP -->
+		<copy todir="${warDir}">
+			<fileset dir="${jspdir}"/>
+		</copy>
+		
+		<copy todir="${warDir}/WEB-INF">
+			<fileset dir="${deploymentdescription}/war" includes="*.xml"/>
+		</copy>
+        <mkdir dir="${warDir}/WEB-INF/classes"/>
+
+		<copy todir="${warDir}/WEB-INF/classes">
+			<fileset dir="${project.dir}" includes="conf/server.properties"/> 
+		      <fileset dir="${classdir}"> 
+<!--
+			<include name="org/topon/configuration/**/*.class"/>
+   		   <include name="org/topon/signatures/apache/*.class"/>
+   		   <include name="org/topon/signatures/interfaces/*.class"/>
+   	       <include name="org/topon/signatures/*class"/>
+   		   <include name="org/topon/database/*.class"/>
+-->
+			</fileset>
+		</copy>
+
+			<jar destfile="${earDir}/${dist.war}"
+			 basedir="${warDir}"/>
+	</target>
+
+	
+	<target name="create_ear" depends="create_jar,create_war">
+	    <copy todir="${earDir}/META-INF">
+		      <fileset dir="${deploymentdescription}/ear" includes="application.xml" /> 
+	    </copy>
+		<copy todir="${earDir}">
+			<fileset dir="${project.dir}" includes="conf/server.properties"/> 
+		</copy>
+		
+		<mkdir dir="${earDir}/lib"/>
+		<copy file="${mysql.driver}" todir="${earDir}/lib"/>
+            <!-- Create ear file and place in ear directory -->
+		<jar jarfile="${basedir}/${dist.ear}" basedir="${earDir}" />
+	</target>
+
+    <target name="deploy">
+		<copy file="${dist.ear}" 
+			  todir="${jboss.default.deploy.dir}"/>
+    </target>
+
+	
+	<target name="undeploy">
+		<delete file="${jboss.default.deploy.dir}/${dist.ear}" />
+	</target>
+
+
+	<target name="clean">
+		<delete file="${dist.ear}"/>
+ 		<delete dir="${dist.dir}"/>			
+	</target>
+	
+	
+	<target name="all" description="all tasks together">
+		<echo message="cleaning old dist"/>
+		<antcall target="clean"/>
+		<echo message="creating new jar, war, ear"/>
+		<antcall target="create_ear"/>
+		<echo message="going to undeploy from JBOSS"/>
+		<antcall target="undeploy"/>
+		<echo message="going to deploy new version, sleeps 10 seconds"/>
+		<sleep seconds="10"/>
+		<antcall target="deploy"/>
+	</target>
+			
+	
+	
+	<!-- =================================
+          target: resolve             
+        ================================= -->
+    <target name="resolve" description="--> retreive dependencies with ivy">
+<!--
+   	<taskdef resource="fr/jayasoft/ivy/ant/antlib.xml" uri="antlib:fr.jayasoft.ivy.ant" classpathref="ivy.lib.path"/>
+        <ivy:retrieve />
+-->
+
+    </target>
+</project>

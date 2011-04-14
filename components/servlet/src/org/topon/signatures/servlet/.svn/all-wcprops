@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/xmlsignatures/!svn/ver/2/trunk/components/servlet/src/org/topon/signatures/servlet
+END
+ServletUtilities.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/xmlsignatures/!svn/ver/73/trunk/components/servlet/src/org/topon/signatures/servlet/ServletUtilities.java
+END
+CA.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/xmlsignatures/!svn/ver/78/trunk/components/servlet/src/org/topon/signatures/servlet/CA.java
+END
+DocumentsStore.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/xmlsignatures/!svn/ver/57/trunk/components/servlet/src/org/topon/signatures/servlet/DocumentsStore.java
+END
+SignatureStore.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/xmlsignatures/!svn/ver/57/trunk/components/servlet/src/org/topon/signatures/servlet/SignatureStore.java
+END

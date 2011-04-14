@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Created-By: Topon
+Main-Class: org.topon.client.Client
+Class-Path: swing-layout-1.0.jar

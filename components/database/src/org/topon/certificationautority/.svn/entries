@@ -1,0 +1,52 @@
+8
+
+dir
+58
+http://b140/xmlsignatures/trunk/components/database/src/org/topon/certificationautority
+http://b140/xmlsignatures
+
+
+
+2007-08-13T06:24:20.363897Z
+58
+topon
+
+
+svn:special svn:externals svn:needs-lock
+
+CAHelper.java
+file
+80
+
+
+
+2007-08-16T05:30:17.843750Z
+c4db35a8459a77ef54ab3a14bd42eae8
+2007-08-16T05:30:22.344556Z
+80
+topon
+
+CA.java
+file
+77
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+deleted
+

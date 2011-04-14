@@ -1,0 +1,244 @@
+package org.topon.database;
+
+import java.net.IDN;
+import java.security.InvalidAlgorithmParameterException;
+import java.security.NoSuchAlgorithmException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+import java.util.Iterator;
+import java.util.Vector;
+
+import javax.xml.crypto.MarshalException;
+import javax.xml.crypto.dsig.XMLSignatureException;
+import javax.xml.parsers.ParserConfigurationException;
+
+import org.topon.configuration.Configuration;
+import org.topon.configuration.ServerConfiguration;
+import org.topon.configuration.identity.IdentityFactory;
+import org.topon.configuration.identity.IdentityInterface;
+import org.topon.signatures.XMLSignatureHelper;
+import org.topon.signatures.jdk16.DetachedXMLSignatureJDK;
+import org.w3c.dom.Document;
+
+
+public class DatabaseHelper {
+
+
+	/**
+	 * Insert New Signature into database
+	 * @param connection
+	 * @param sigMod
+	 * @return true when insert is successful.
+	 * @throws SQLException
+	 */
+	public static boolean insertSignatureIntoDatabase(Connection connection, SignatureModel sigMod) 
+	throws SQLException{
+		//TODO - je dobry pouzivat v Servletu staticky metody????
+
+		boolean isInserted = false;
+		PreparedStatement pstm;
+		connection.setAutoCommit(false);
+		pstm = connection.prepareStatement("insert into t_signatures " +
+				"(iddoc,CN,login,signature)" +
+		" values (?, ? , ?, ?)");
+		pstm.setInt(1,sigMod.getDocid());
+		pstm.setString(2,sigMod.getCN());
+		pstm.setString(3, sigMod.getLogin());
+<<<<<<< .mine
+		System.out.println(sigMod.getSignatureXMLString());
+		pstm.setString(4, sigMod.getSignatureXMLString());
+=======
+                String xmlSigString = sigMod.getSignatureXMLString();
+                
+                //TODO do databaze se neuklada XML Signatura String zjistit proc, mozne reseni ze byl problem SignatureIdentiry s XMLStrigem ale to uz je snad opraveny
+                System.out.println("DatabaseHelper..storeXML " + xmlSigString);
+                pstm.setString(4, sigMod.getSignatureXMLString());
+>>>>>>> .r24
+		pstm.executeUpdate();
+		connection.commit();
+		isInserted = true;
+		return isInserted;
+	}
+	/**
+	 * Insert new document into Database
+	 * @param connection
+	 * @param docMod
+	 * @return
+	 * @throws SQLException
+	 */
+	public static boolean insertDocumentIntoDatabase(Connection connection, DocumentModel docMod)
+	throws SQLException{
+		boolean isInserted = false;
+		String docUrl = docMod.getDocURL();
+		int docID = getDocumentIdfromDatabase(connection, docUrl);
+		if(docID > 0) {
+			isInserted = false;
+			throw new DatabaseException("Document with url="+docUrl+ " already in database");
+			
+		} else {
+			PreparedStatement pstm;
+			connection.setAutoCommit(false);
+			pstm = connection.prepareStatement("insert into t_documents " +
+					"(docurl,validstart,validend,description)" +
+			" values (?, ? , ?, ?)");
+			pstm.setString(1,docMod.getDocURL());
+			java.sql.Date start =  new java.sql.Date(docMod.getValidStart());//(java.sql.Date)docMod.getValidStart();
+			java.sql.Date end =  new java.sql.Date(docMod.getValidEnd());
+
+			pstm.setDate(2,start);
+			pstm.setDate(3, end);
+			pstm.setString(4, docMod.getDescription());
+			pstm.executeUpdate();
+			connection.commit();
+			isInserted = true;		
+			pstm.close();
+		}
+		return isInserted;
+	}
+
+	/**
+	 * Delete document from t_documents by given URL
+	 * @param connection
+	 * @param docURL
+	 * @return
+	 * @throws SQLException
+	 */
+	public static boolean deleteDocumentFromDatabase(Connection connection, String docURL)
+		throws SQLException
+	{
+		boolean isDeleted = false;
+		int docid = getDocumentIdfromDatabase(connection, docURL);
+		isDeleted = deleteDocumentFromDatabase(connection ,docid);
+		return isDeleted;
+	}
+
+	/**
+	 * Deleted document from database by given docid (primary key)
+	 * @param connection
+	 * @param docid - primary key 
+	 * @return true when some lines were deleted 
+	 * @throws SQLException
+	 */
+	public static boolean deleteDocumentFromDatabase(Connection connection, int docid)
+		throws SQLException
+	{
+		boolean isdeleted = false;
+		Statement stmt = connection.createStatement();
+		//TODO jmena tabulek do konfigurace
+		
+		String sql = "delete from t_documents where docid = '"+docid+"'"; 
+		int iisdel = stmt.executeUpdate(sql);
+		if(iisdel >0)
+			isdeleted = true;
+		return isdeleted;
+	}
+	
+	
+	
+	/** Get document ID from database by given URL ( which is unique) */
+	public static int getDocumentIdfromDatabase(Connection connection, String docURL) {
+		int docId = 0;
+
+		Statement stmt = null;
+		try {
+			stmt = connection.createStatement();
+			ResultSet rset = stmt.executeQuery("select docid from t_documents where docurl = '"+docURL+"'");
+			while(rset.next()) {
+				docId = rset.getInt(1);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			if(stmt != null) {
+				try {
+					stmt.close();
+					
+				} catch (SQLException e) {
+
+					e.printStackTrace();
+				}
+			}
+		}
+
+
+		return docId;
+	}
+
+
+	/** Return all documents that are available in Database to sign*/
+	public static Vector getDocumentsToSign(Connection connection) throws SQLException {
+		Vector vector = new Vector();
+		Statement stmt  = connection.createStatement();
+		stmt = connection.createStatement();
+		ResultSet rset = stmt.executeQuery("select docid,docurl,validstart,validend,description from t_documents");
+		while(rset.next()) {
+			DocumentModel model = new DocumentModel();
+			model.setDocid(rset.getInt(1));
+			model.setDocURL(rset.getString(2));
+			model.setValidStart(rset.getTimestamp(3).getTime());
+			model.setValidEnd(rset.getTimestamp(4).getTime());
+			model.setDescription(rset.getString(5));
+			vector.add(model);
+		}
+		return vector;
+
+	}
+
+
+
+
+	public static void main(String[] args) throws SQLException, NoSuchAlgorithmException, InvalidAlgorithmParameterException, MarshalException, XMLSignatureException, ParserConfigurationException {
+		IdentityInterface identity = IdentityFactory.createIdentity(Configuration.getInstance());
+		DetachedXMLSignatureJDK sign = new DetachedXMLSignatureJDK();
+		Document signature = sign.createDetachedSignature("http://localhost:8080/ejbca/",
+				identity.getPrivateKey(),
+				identity.getX509Cetificate());
+		SignatureModel sigMod = new SignatureModel(signature);
+		Connection con = (new  DatabaseConection(ServerConfiguration.getInstance())).getMySqlConnection();
+		boolean isinserted =DatabaseHelper.insertSignatureIntoDatabase(con, sigMod);
+		System.out.println("is inserted " + isinserted);
+		
+		
+		/*		Connection con = (new  DatabaseConection(ServerConfiguration.getInstance())).getMySqlConnection();
+		Vector vector = DatabaseHelper.getDocumentsToSign(con);
+		Iterator it = vector.iterator();
+		while(it.hasNext()) {
+			DocumentModel mod = (DocumentModel)it.next();
+			System.out.println(mod.getDocid()+ "  " + mod.getDocURL() + " "+ mod.getValidStart() +  " " +mod.getValidEnd() );
+		}
+		Document doc = XMLSignatureHelper.createXMLWithDocuments(vector);
+		XMLSignatureHelper.printDOMDocument(doc);
+
+		
+
+		DocumentModel docMod = (DocumentModel)vector.get(0);
+		docMod.setDocURL("http://localhost:8080/ejbca/");
+		docMod.setValidStart(new Date().getTime());
+		docMod.setDescription("hlavni stranka EJC Certification Authority");
+		GregorianCalendar calendar= new GregorianCalendar();
+		calendar.set(Calendar.YEAR, 2007);
+		calendar.set(Calendar.MONTH,11);
+		calendar.set(Calendar.DAY_OF_MONTH,31);
+		Date validEnd = calendar.getTime();
+
+		docMod.setValidEnd(validEnd.getTime());
+		Connection conn = (new  DatabaseConection(ServerConfiguration.getInstance())).getMySqlConnection();
+
+		boolean inserted = DatabaseHelper.insertDocumentIntoDatabase(conn, docMod);
+		System.out.println("new document with url "+docMod.getDocURL() + " is inserted="+inserted);
+*/
+/*
+		boolean isdeleted = DatabaseHelper.deleteDocumentFromDatabase(conn, docMod.getDocURL());
+
+
+		System.out.println("document with url "  + docMod.getDocURL() + "is deleted="+isdeleted );
+*/
+	}
+
+}
