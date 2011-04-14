@@ -1,16 +1,37 @@
-Pavel Topinka Project ptopinka@gmail.com
+author: Pavel Topinka 
+email: ptopinka@gmail.com
 
-System for collection of Digital Signatures 
 
-It is possible to sign given document with RSA based 
-digital signature. For storing Digital Signatures
-is used XML Signature specification with extension 
-Digital Timestamps
+	System for collection of Digital Signatures 
 
-If you are interested about this project or technology
-please contact me on my email.
 
-There is not commited jars and other libraries needed
-to compile and deploy project
+
+Abstract:
+	 The goal of the thesis is to analyze and implement system for management of digital signatures.
+	 The application will look at the whole process of creating a digital signature and its 
+	 verification by examining signature validity and storage
+
+	 It is possible to sign given document with RSA based digital signature. For storing Digita
+	 Signatures is used XML Signature specification with extension Digital Timestamps. 
+	 I am able to create this Signature in www browser using Java Applets.
+
+
+Used Technologies:
+	Jdk 1.6
+	Java Applets 
+	ANT 1.8
+	JBOSS 
+	XML Signatures
+	EJBCA
+	MySQL
+	YUI
+	
+	
+
+	If you are interested about this project or technology please contact me on my email.
+
+	There are not commited jars and other libraries needed to compile and deploy project
+
+Regards
 
 Pavel Topinka
